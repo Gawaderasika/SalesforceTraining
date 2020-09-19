@@ -1,0 +1,24 @@
+<apex:page standardController="Job_Rasika__c">
+    <apex:form >
+    	<apex:pageBlock mode="edit">
+            <apex:pageBlockSection >
+            	<apex:inputField value="{!Job_Rasika__c.Name}"/>
+                <apex:inputField value="{!Job_Rasika__c.Certification_Required__c}"/>
+                <apex:inputField value="{!Job_Rasika__c.Expires_On__c}"/>
+                <apex:inputField value="{!Job_Rasika__c.Hired_Applicants__c}"/>
+                <apex:inputField value="{!Job_Rasika__c.Manager__c}"/>
+                <apex:inputField value="{!Job_Rasika__c.Name__c}"/>
+                <apex:inputField value="{!Job_Rasika__c.Number_of_Positions__c}"/>
+                <apex:inputField value="{!Job_Rasika__c.Qualifications_Required__c}"/>
+                <apex:inputField value="{!Job_Rasika__c.Required_Skills__c}"/>
+                <apex:inputField value="{!Job_Rasika__c.Salary_Offered__c}"/>
+                <apex:inputField value="{!Job_Rasika__c.Total_Applicants__c}"/>
+                <apex:inputField value="{!Job_Rasika__c.Description__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="save" action="{!save}"/>
+                <apex:commandButton value="edit" action="{!edit}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

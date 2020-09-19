@@ -1,0 +1,11 @@
+<apex:page >
+    <h1>Hello World</h1>
+    <apex:pageBlock title="Block title">
+        <apex:pageBlockSection title="Section title 1">
+            This is one section
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Section title 2">
+            This is another section
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

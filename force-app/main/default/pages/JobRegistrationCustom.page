@@ -1,0 +1,93 @@
+<apex:page controller="JobRegistrationCustom" showHeader="false" sidebar="false" standardStylesheets="false">
+    <style>
+    	#jobDescription{
+        	text-size: 10px;	
+        	text-decoration: underline;
+        	color: #2471A3;
+        }
+        #stepOne{
+        	color: #2471A3;
+        }
+        #mainblock{
+        	margin-top: 20px;
+        	margin-left: 200px;
+        	margin-right: 200px;
+        	border: solid;
+        	border-radius: 50px;
+        	padding: 50px;
+        	text-align: left;
+        }
+        #pageheader{
+        	background: lightblue;
+        }
+        .btnstyle{
+        	border: normal;
+        	border-radius: 5px;
+        	width: 150px;
+        	padding: 10px;
+        	margin-left: 100px;
+        }
+        .img1{
+        	height: 150px;
+        	margin-left: 330px;
+        }
+        *{
+        box-sizing: border-box;	
+        font-family: calibri;
+        }
+        .column{
+        	width: 50%;
+        }
+        .row:after{
+        	content: "";
+        	display: table;
+        	clear: both;
+        }
+    </style>
+    <div id="mainblock">
+    	<apex:form >
+    	<apex:pageBlock mode="edit">
+            <p id="pageheader">
+                 Job Wizard
+            </p>
+            <apex:image styleClass="img1" url="{!$Resource.logopic}"/>
+            <apex:pageMessages />
+            <h1 id="jobDescription">
+            	Job Registration
+        	</h1>
+            <h2 id="stepOne">
+            	Step - 1
+        	</h2>
+            <apex:pageBlockSection >
+            	<apex:inputField value="{!c.Certification_Required__c}" id="Certification_Required__c"/><br/><br/><br/>
+                <apex:inputField value="{!c.Description__c}" id="Description__c"/><br/><br/><br/>
+            	<apex:inputField value="{!c.Expires_On__c}" id="Expires_On__c"/><br/><br/><br/>
+            	<apex:inputField value="{!c.Manager__c}" id="Manager__c"/><br/><br/><br/>
+            	<apex:inputField value="{!c.Number_of_Positions__c}" id="Number_of_Positions__c"/><br/><br/><br/>
+                <apex:inputField value="{!c.Qualifications_Required__c}" id="Qualifications_Required__c"/><br/><br/><br/>
+            	<apex:inputField value="{!c.Required_Skills__c}" id="Required_Skills__c"/><br/><br/><br/>
+                <apex:inputField value="{!c.Salary_Offered__c}" id="Salary_Offered__c"/><br/><br/><br/><br/>
+                <apex:commandButton value="Save & Next" action="{!save}" id="theButton" onmouseover="check()" styleClass="btnstyle"/>
+                <script>
+                function check(){
+                    var Certification_Required__c=document.getElementById('{!$Component.Certification_Required__c}').value;
+                    //var Description__c=document.getElementById('{!$Component.Description__c}').value;
+                    var Expires_On__c=document.getElementById('{!$Component.Expires_On__c}').value;
+                    var Manager__c=document.getElementById('{!$Component.Manager__c}').value;
+                    var Number_of_Positions__c=document.getElementById('{!$Component.Number_of_Positions__c}').value;
+                    var Qualifications_Required__c=document.getElementById('{!$Component.Qualifications_Required__c}').value;
+                    var Required_Skills__c=document.getElementById('{!$Component.Required_Skills__c}').value;
+                    var Salary_Offered__c=document.getElementById('{!$Component.Salary_Offered__c}').value;
+                    if(Certification_Required__c == "" || Description__c == "" || Expires_On__c == "" || 
+                    Manager__c == "" || Number_of_Positions__c == "" || Qualifications_Required__c == "" || Required_Skills__c == "" || 
+                    Salary_Offered__c == "")
+                    {
+                        alert('Please fill all the fields');
+                    }
+                }
+                </script>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    </div>
+</apex:page>

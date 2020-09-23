@@ -1,7 +1,23 @@
-<apex:page controller="CandidateRegistrationCustom" showHeader="false" sidebar="false" standardStylesheets="false">
-    <apex:stylesheet value="{!$Resource.staticResouceCss}"/>
+<!--====================================================--> 
+<!--Name: CandidateRegistrationCustom --> 
+<!--Copyright notice: --> 
+<!--====================================================--> 
+<!--====================================================--> 
+<!-- Purpose: Visual Force page to display Candidate registration form using custom controller--> 
+<!--------- --> 
+<!--====================================================--> 
+<!--====================================================--> 
+<!-- History --> 
+<!-- ------- --> 
+<!-- VERSION   AUTHOR         DATE                DETAIL          RELEASE/CSR --> 
+<!-- 1.0 -     RasikaGawade   08/09/2020          INITIAL DEVELOPMENT --> 
+<!--====================================================--> 
+
+<apex:page controller="CandidateRegistrationCustomController" showHeader="false" sidebar="false" standardStylesheets="false">
+    <apex:stylesheet value="{!$Resource.staticResourceCss}"/>
+    <apex:includeScript value="{!$Resource.staticResourceJs}"/>
     <div id="mainblock">
-        <apex:form >
+    <apex:form >
     	<apex:pageBlock mode="edit">
              <p id="pageheader">
                  Job Wizard
@@ -16,6 +32,7 @@
         	</h2>
             <apex:pageBlockSection >
                 <!--<apex:inputField value="{!c.Name}"/><br/>-->
+                transient <apex:inputField value="{!c.Name}" id="Name"/><br/><br/><br/>
                 <apex:inputField value="{!c.Salutation__c}" id="Salutation__c"/><br/><br/><br/>
                 <apex:inputField value="{!c.First_Name__c}" id="First_Name__c"/><br/><br/><br/>
             	<apex:inputField value="{!c.Last_Name__c}" id="Last_Name__c"/><br/><br/><br/>
@@ -28,36 +45,6 @@
             	<apex:inputField value="{!c.Expected_Salary__c}" id="Expected_Salary__c"/><br/><br/><br/>
                 <apex:inputField value="{!c.Status__c}" id="Status__c"/><br/><br/><br/><br/>
 				<apex:commandButton value="Save & Next" action="{!save}" id="theButton" onmouseover="check()" styleClass="btnstyle"/>
-                <script>
-                function check(){
-                    var First_Name__c=document.getElementById('{!$Component.First_Name__c}').value;
-                    var Last_Name__c=document.getElementById('{!$Component.Last_Name__c}').value;
-                    var Application_Date__c=document.getElementById('{!$Component.Application_Date__c}').value;
-                    var Country__c=document.getElementById('{!$Component.Country__c}').value;
-                    var DOB__c=document.getElementById('{!$Component.DOB__c}').value;
-                    var Email__c=document.getElementById('{!$Component.Email__c}').value;
-                    var Expected_Salary__c=document.getElementById('{!$Component.Expected_Salary__c}').value;
-                    var Job_Rasika__c=document.getElementById('{!$Component.Job_Rasika__c}').value;
-                    var Salutation__c=document.getElementById('{!$Component.Salutation__c}').value;
-                    var State__c=document.getElementById('{!$Component.State__c}').value;
-                    var Status__c=document.getElementById('{!$Component.Status__c}').value;
-                    if(First_Name__c == "" || Last_Name__c == "" || Application_Date__c == "" || Country__c == "" || DOB__c == "" || 
-                      Email__c == "" || Expected_Salary__c == "" || Job_Rasika__c == "" || Salutation__c == "" || State__c == "" || 
-                      Status__c == "")
-                    {
-                        alert('Please fill all the fields');
-                        //document.getElementById('{!$Component.theButton}').disabled = true;
-                    }
-                    else{
-                        //document.getElementById('{!$Component.theButton}').disabled = false;
-                    }
-                }
-                /*function changeCase(){
-        	 		var x = document.getElementById.("thePage:theForm:thePageCode:id1");
-        			x.value = x.value.toUpperCase();
-            		alert('Case changed'+x.value);
-        		}*/
-                </script>  
             </apex:pageBlockSection>
         </apex:pageBlock>   
     </apex:form>

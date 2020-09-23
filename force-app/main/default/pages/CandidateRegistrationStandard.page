@@ -1,3 +1,17 @@
+<!--====================================================--> 
+<!--Name: CandidateRegistrationStandard --> 
+<!--Copyright notice: --> 
+<!--====================================================--> 
+<!--====================================================--> 
+<!-- Purpose: Visual Force page to display Candidate registration form using standard controller--> 
+<!--------- --> 
+<!--====================================================--> 
+<!--====================================================--> 
+<!-- History --> 
+<!-- ------- --> 
+<!-- VERSION   AUTHOR         DATE                DETAIL          RELEASE/CSR --> 
+<!-- 1.0 -     RasikaGawade   08/09/2020          INITIAL DEVELOPMENT --> 
+<!--====================================================--> 
 <apex:page standardController="Candidate_Rasika__c" >
     <apex:form >
     	<apex:pageBlock >

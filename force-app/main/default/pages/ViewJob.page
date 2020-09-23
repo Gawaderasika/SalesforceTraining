@@ -1,0 +1,12 @@
+<apex:page controller="ViewJob"  showHeader="false" sidebar="false" >
+    <apex:pageBlock title="Job Details">
+        <apex:pageBlockSection >
+            <c:RelatedListComponents job="{!job}" fields1="{!fields1}"></c:RelatedListComponents>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    <apex:pageBlock title="Candidate Details">
+        <apex:pageBlockSection >
+            <c:RelatedListComponent records="{!records}" fields="{!fields}"></c:RelatedListComponent>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

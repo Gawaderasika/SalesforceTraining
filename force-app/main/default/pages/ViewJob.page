@@ -1,12 +1,54 @@
-<apex:page controller="ViewJob"  showHeader="false" sidebar="false" >
+<apex:page controller="ViewJob">
+  
+   	<!-- jQuery show()/hide() method 
+ 	<apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"/>
+    <script>
+		$(document).ready(function(){
+        	$('[id$=btn]').click(function(){
+            	$('[id$=candidateForm]').toggle();
+            });
+        });
+	</script>
+    -->
+    
+	
+	<!-- Job Records --> 
+    
+    
+    <!-- Details of job -->
     <apex:pageBlock title="Job Details">
         <apex:pageBlockSection >
-            <c:RelatedListComponents job="{!job}" fields1="{!fields1}"></c:RelatedListComponents>
-        </apex:pageBlockSection>
-        </apex:pageBlock>
-    <apex:pageBlock title="Candidate Details">
-        <apex:pageBlockSection >
-            <c:RelatedListComponent records="{!records}" fields="{!fields}"></c:RelatedListComponent>
+            <c:RelatedListComponents job="{!job}" jobRecords="{!jobRecords}"></c:RelatedListComponents>
         </apex:pageBlockSection>
     </apex:pageBlock>
+    
+    
+    <!-- New candidate registration -->
+    <apex:form id="candidateForm">
+        <apex:commandButton value="New Registration" action="{!ShowPB}"/>
+    	<apex:pageBlock mode="edit" rendered="{!PBFlag}">
+            <apex:pageBlockSection >
+                <apex:inputField value="{!c.Salutation__c}" id="Salutation__c"/><br/><br/><br/>
+                <apex:inputField value="{!c.First_Name__c}" id="First_Name__c"/><br/><br/><br/>
+            	<apex:inputField value="{!c.Last_Name__c}" id="Last_Name__c"/><br/><br/><br/>
+            	<apex:inputField value="{!c.DOB__c}" id="DOB__c"/><br/><br/><br/>
+                <apex:inputField value="{!c.Email__c}" id="Email__c"/><br/><br/><br/>
+                <apex:inputField value="{!c.Country__c}" id="Country__c"/><br/><br/><br/>
+            	<apex:inputField value="{!c.State__c}" id="State__c"/><br/><br/><br/>
+                <apex:inputField value="{!c.Job_Rasika__c}" id="Job_Rasika__c"/><br/><br/><br/>
+            	<apex:inputField value="{!c.Application_Date__c}" id="Application_Date__c"/><br/><br/><br/>
+            	<apex:inputField value="{!c.Expected_Salary__c}" id="Expected_Salary__c"/><br/><br/><br/>
+                <apex:inputField value="{!c.Status__c}" id="Status__c"/><br/><br/><br/><br/>
+				<apex:commandButton value="Save" action="{!save}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>   
+    </apex:form>
+    
+    <!-- Details of candidates -->
+    <apex:pageBlock title="Candidate Details">
+        <apex:pageBlockSection >
+            <c:RelatedListComponent candidate="{!candidate}" candidateRecords="{!candidateRecords}"></c:RelatedListComponent>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+
 </apex:page>

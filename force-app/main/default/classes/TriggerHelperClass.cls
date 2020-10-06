@@ -58,10 +58,10 @@ public class TriggerHelperClass {
 	********************************************************************/
     public static void isHired(List<Job_Rasika__c> jobList){
         for(Job_Rasika__c job: jobList){
-        	if(job.Number_of_Positions__c == job.Hired_Applicants__c){
-                if(job.Active__c == true){
+        	if(job.Number_of_Positions__c == job.Hired_Applicants__c && job.Active__c == true){	//changes applied
+                //if(job.Active__c == true){
                 	job.Active__c = false;
-                }
+                //}
             }
         }
     }
@@ -71,10 +71,10 @@ public class TriggerHelperClass {
 	********************************************************************/
     public static void activateJob(List<Job_Rasika__c> jobList){
         for(Job_Rasika__c job: jobList){
-            if(job.Number_of_Positions__c > job.Hired_Applicants__c){
-                if(job.Active__c == false){
+            if(job.Number_of_Positions__c > job.Hired_Applicants__c && job.Active__c == false){	//changes applied
+                //if(job.Active__c == false){
                 	job.Active__c = true;
-                }
+                //}
             }
         }
     }
@@ -86,6 +86,9 @@ public class TriggerHelperClass {
         for(Candidate_Rasika__c c: cndList){
         	if(c.Expected_Salary__c == null){
             	c.addError('Test-method: Trigger error: Expected Salary field is missing');
+            }
+            if(c.Email__c != null && c.Salutation__c == null){
+                c.addError('Test-method: Trigger error: Salutaion is required');
             }
         }
     }

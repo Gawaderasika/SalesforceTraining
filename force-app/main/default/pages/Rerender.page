@@ -1,0 +1,24 @@
+<apex:page standardController="Job_Rasika__c">
+    <apex:pageBlock title="Candidates">
+        <apex:form >
+            <apex:dataTable value="{!Job_Rasika__c.Candidates_Rasika__r}" var="contact" cellPadding="4" border="1">
+                  <apex:column >
+                      <apex:outputPanel >
+                          <apex:actionSupport event="onmouseover" rerender="detail"> 
+                              <apex:param name="cid" value="{!contact.id}"/>
+                          </apex:actionSupport> 
+                          {!contact.Name}
+                      </apex:outputPanel> 
+                  </apex:column>
+            </apex:dataTable>
+        </apex:form>
+    </apex:pageBlock>
+    <apex:outputPanel id="detail">
+        <apex:actionStatus startText="Requesting...">
+            <apex:facet name="stop">
+                <apex:detail subject="{!$CurrentPage.parameters.cid}" relatedList="false" 
+                                title="false"/>
+            </apex:facet>
+        </apex:actionStatus>
+    </apex:outputPanel>
+</apex:page>

@@ -12,15 +12,16 @@ History
 VERSION AUTHOR DATE DETAIL FEATURES/CSR/TTP 
 1.0 - Name 08/09/2020 INITIAL DEVELOPMENT 
 ***********************************************************************/
-public class ViewJob {
+global class ViewJob {
     
     public List<Job_Rasika__c> job{get;set;}
     public List<Candidate_Rasika__c> candidate{get;set;}
     public List<String> jobRecords{get;set;}
     public List<String> candidateRecords{get;set;}
     public Candidate_Rasika__c c {get; set;}
-    
 	Public Boolean PBFlag{get;set;}    
+    public static Job_Rasika__c job{get;set;}
+    public String JobId {get; set;}
     public ViewJob(){
         
         String Id = ApexPages.currentPage().getParameters().get('id');
@@ -32,7 +33,6 @@ public class ViewJob {
         candidateRecords = new List<String>{'Name', 'Full_Name', 'Email', 'Status'};
         candidate = job[0].Candidates_Rasika__r;
         c = new Candidate_Rasika__c();
-        
     }
     
     public PageReference save(){
@@ -43,8 +43,19 @@ public class ViewJob {
             ApexPages.addMessages(e);
             throw e;
         }
-        PageReference redirectSuccess = new PageReference('/apex/ShowImage');
-        return(redirectSuccess);
+        PageReference viewJobDetails = new ApexPages.StandardController(c).view();
+        return(viewJobDetails);
+    }
+    @RemoteAction
+    global static Job_Rasika__c getJobs(String JobId) {
+        job = [SELECT Number_of_positions__c FROM Job_Rasika__c WHERE Id = :JobId];
+        job.Number_of_positions__c = job.Number_of_positions__c+1;
+        update job;
+        return job;
+    }
+    public PageReference createForm(){
+        PageReference candidateForm = new PageReference('/apex/CandidateRegistrationCustom');
+        return(candidateForm);
     }
     public void ShowPB(){
   		PBFlag= true;

@@ -15,7 +15,7 @@
 
 <apex:page controller="CandidateRegistrationCustomController" showHeader="false" sidebar="false" standardStylesheets="false">
     <apex:stylesheet value="{!$Resource.staticResourceCss}"/>
-    <apex:includeScript value="{!$Resource.staticResourceJs}"/>
+    <apex:includeScript value="{!URLFOR($Resource.JsStaticResource,'staticResources.js')}"/>
     <div id="mainblock">
     <apex:form >
     	<apex:pageBlock mode="edit">
@@ -25,7 +25,7 @@
             <apex:image styleClass="img1" url="{!$Resource.logopic}"/>
             <apex:pageMessages />
         	<h1 id="jobDescription">
-            	Job Registration
+            	Candidate Registration
         	</h1>
             <h2 id="stepOne">
             	Step - 1

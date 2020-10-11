@@ -22,6 +22,7 @@ global class ViewJob {
 	Public Boolean PBFlag{get;set;}    
     public static Job_Rasika__c job{get;set;}
     public String JobId {get; set;}
+    String CurrentPgId;
     public ViewJob(){
         
         String Id = ApexPages.currentPage().getParameters().get('id');
@@ -43,7 +44,7 @@ global class ViewJob {
             ApexPages.addMessages(e);
             throw e;
         }
-        PageReference viewJobDetails = new ApexPages.StandardController(c).view();
+        PageReference viewJobDetails = ApexPages.currentPage();
         return(viewJobDetails);
     }
     @RemoteAction

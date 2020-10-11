@@ -4,13 +4,14 @@ public class AccountHelperClass {
         //Map<String, Job_Rasika__c> jobMap = new Map<String, Job_Rasika__c>([SELECT Id, Active__c from Job_Rasika__c]);
         //List<Job_Rasika__c> jobList=jobMap.values();
         //System.debug(jobMap);
-        
-        /*for(Account acc: accList){
-            if(acc.Level__c = 'Primary'){
-                integer countPrimary = accList.size();
-    			System.debug(countPrimary);
+        Integer primaryLevel = 0;
+        List<Contact> ContactList = new List<Contact>([SELECT Id, AccountId, Level__c FROM Contact where AccountId IN :  accList]);
+        for(Contact con: ContactList){
+            if(con.Level__c == 'Primary'){
+                //primaryLevel ++;
+    			System.debug('primaryLevel');
             }
-        }*/
+        }
     }
     
 }

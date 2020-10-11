@@ -1,0 +1,9 @@
+<apex:page controller="StudentApexRecordInheritedSharing">
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!AllStudents}" var="record">
+            <apex:column value="{!record.Id}"/>
+            <apex:column value="{!record.Name}"/>
+            <apex:column value="{!record.Admission_Date__c}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

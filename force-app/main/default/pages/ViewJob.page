@@ -37,7 +37,11 @@
         );
     }
     </script>
-    <input type="button" value="Increase Positions" onclick = "getJob()" reRender = "JobBlock"/><br/><br/>    
+    <apex:outputPanel >
+    	<input type="button" value="Increase Positions" onclick = "getJob()"/>
+    	<apex:actionSupport event="onclick" reRender="JobBlock"/><br/><br/>
+    </apex:outputPanel>
+        
     <input type="button" value="New Registration" id="btn"/>
     <!-- New candidate registration -->
 	<apex:form id="candidateForm" styleClass="visibility: hidden">
@@ -57,7 +61,7 @@
             	<apex:inputField value="{!c.Application_Date__c}" id="Application_Date__c"/><br/><br/><br/>
             	<apex:inputField value="{!c.Expected_Salary__c}" id="Expected_Salary__c"/><br/><br/><br/>
                 <apex:inputField value="{!c.Status__c}" id="Status__c"/><br/><br/><br/><br/>
-				<apex:commandButton value="Save" action="{!save}" reRender="CandidateBlock" />
+				<apex:commandButton value="Save" action="{!save}" reRender="id1" />
             </apex:pageBlockSection>
         </apex:pageBlock> 
  	
@@ -66,7 +70,7 @@
     <!-- Details of candidates -->
     <apex:outputPanel id="CandidateBlock">
     	<apex:pageBlock title="Candidate Details">
-        <apex:pageBlockSection >
+        <apex:pageBlockSection id="id1">
             <c:RelatedListComponent candidate="{!candidate}" candidateRecords="{!candidateRecords}"></c:RelatedListComponent>
         </apex:pageBlockSection>
     </apex:pageBlock>

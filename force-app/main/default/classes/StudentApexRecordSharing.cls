@@ -1,7 +1,7 @@
-public with sharing class StudentApexRecordSharing {
+public without sharing class StudentApexRecordSharing {
     // ApexPages.StandardSetController must be instantiated
     // for standard list controllers
-    public ApexPages.StandardSetController setCon {
+    /*public ApexPages.StandardSetController setCon {
         get {
             if(setCon == null) {
                 setCon = new ApexPages.StandardSetController(Database.getQueryLocator(
@@ -15,9 +15,10 @@ public with sharing class StudentApexRecordSharing {
     // Initialize setCon and return a list of records
     public List<Student__c> getStudents() {
         return (List<Student__c>) setCon.getRecords();
-    }
-    public void inheritSharingMethod(){
+    }*/
+    public List<Student__c> getStudents(){
         StudentApexRecordInheritedSharing obj = new StudentApexRecordInheritedSharing();
         List<Student__c> lstStudent = obj.getAllStudents();
+        return lstStudent;
     }
 }

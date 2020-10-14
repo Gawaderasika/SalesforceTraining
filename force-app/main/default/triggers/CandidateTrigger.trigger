@@ -29,7 +29,7 @@ trigger CandidateTrigger on Candidate_Rasika__c (before insert, before update, a
             List<Candidate_Rasika__c> con = new List<Candidate_Rasika__c>([SELECT Id, Email__c, Status__c FROM Candidate_Rasika__c WHERE Status__c = 'HIRED']);
             for(Candidate_Rasika__c c: con){
                 if(c.Status__c == 'Hired'){
-                    SendEmail.SendToCandidate(c.Id, c.Email__c);
+                    CandidateFutureApexSendEmail.SendToCandidate(c.Id, c.Email__c);
                 }
             }
         }

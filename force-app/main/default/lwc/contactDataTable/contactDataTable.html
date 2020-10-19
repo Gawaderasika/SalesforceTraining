@@ -1,21 +1,20 @@
 <template>
-    <lightning-card title="Datatable with Row Actions" icon-name="standard:contact" > <br/>
-       <div style="width: auto;">
+    <lightning-card title="Datatable with Row Actions"> <br/>
+       <div>
            <template if:true={data}>
 
                <lightning-datatable data={data}
                                     columns={columns}
                                     key-field="id"
-                                    hide-checkbox-column="true"
                                     onrowaction={handleRowActions}></lightning-datatable>
            </template>
 
        </div>
 
-       <!-- Spinner -->
+       <!-- Spinner
        <div if:true={showLoadingSpinner}>
            <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
-       </div>
+       </div> -->
 
        <!-- Detail view modal -->
        <template if:true={bShowModal}>
@@ -50,15 +49,12 @@
                <div if:true={isEditForm} class="slds-theme_default">
                    <lightning-record-edit-form layout-type="Full" record-id={currentRecordId} object-api-name="Contact" onsubmit={handleSubmit} onsuccess={handleSuccess}>
                        <lightning-messages></lightning-messages>
-                       <lightning-output-field field-name="AccountId"></lightning-output-field>
                        <lightning-input-field field-name="FirstName"></lightning-input-field>
                        <lightning-input-field field-name="LastName"></lightning-input-field>
                        <lightning-input-field field-name="Phone"></lightning-input-field><br/>
                        
                        <div style="text-align:center;">
-                           <lightning-button class="slds-m-top_small"
-                                             variant="brand"
-                                             type="submit"
+                           <lightning-button type="submit"
                                              name="update"
                                              label="Update Record"></lightning-button>
                        </div>
@@ -68,8 +64,7 @@
 
                <!-- modal footer start-->
                <footer class="slds-modal__footer" if:false={isEditForm}>
-                   <lightning-button variant="brand"
-                                     label="Close"
+                   <lightning-button label="Close"
                                      title="Close"
                                      onclick={closeModal}></lightning-button>
                </footer>

@@ -1,11 +1,13 @@
 import { LightningElement, track, wire } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
+import {refreshApex} from '@salesforce/apex';
 import CONTACT_OBJECT from '@salesforce/schema/Contact';
 import FIRSTNAME_FIELD from '@salesforce/schema/Contact.FirstName';
 import LASTNAME_FIELD from '@salesforce/schema/Contact.LastName';
 import EMAIL_FIELD from '@salesforce/schema/Contact.Email';
 
 export default class Contact extends LightningElement {
+    refreshTable;
     objectApiName = CONTACT_OBJECT;
     fields=[FIRSTNAME_FIELD, LASTNAME_FIELD, EMAIL_FIELD];
     handleSuccess(event){
@@ -15,5 +17,6 @@ export default class Contact extends LightningElement {
             variant: success
         });
         this.dispatchEvent(toastevent);
+        return refreshApex(this.refreshTable);
     }
 }

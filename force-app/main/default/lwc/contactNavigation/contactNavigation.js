@@ -4,7 +4,17 @@ import { NavigationMixin } from 'lightning/navigation';
 
 export default class ContactNavigation extends NavigationMixin(LightningElement) {
 
-    url;
+    navigateToHome(){
+        this[NavigationMixin.Navigate]({
+            type: 'standard__objectPage',
+            attributes: {
+                objectApiName: 'Case',
+                actionName: 'home'
+            }
+        });
+    }
+    
+    /*url;
 
     connectedCallback() {
         // Store the PageReference in a variable to use in handleClick.
@@ -30,4 +40,5 @@ export default class ContactNavigation extends NavigationMixin(LightningElement)
         // Navigate to the Account Home page.
         this[NavigationMixin.Navigate](this.accountHomePageRef);
     }
+    */
 }

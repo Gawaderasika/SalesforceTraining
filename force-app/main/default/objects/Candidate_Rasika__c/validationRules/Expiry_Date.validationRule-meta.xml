@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expiry_Date</fullName>
+    <active>false</active>
+    <errorConditionFormula>Application_Date__c  &gt;  Job_Rasika__r.Expires_On__c
+ &amp;&amp; 
+ $Setup.VRS__c.Salary_rule__c = true</errorConditionFormula>
+    <errorDisplayField>Application_Date__c</errorDisplayField>
+    <errorMessage>You cannot apply to this job after expiry date</errorMessage>
+</ValidationRule>

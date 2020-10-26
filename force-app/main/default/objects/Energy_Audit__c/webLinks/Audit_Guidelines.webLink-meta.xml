@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Audit_Guidelines</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Audit Guidelines</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>https://ap16.salesforce.com/sfc/p/2w00000Aioc9/a/2w0000004d7q/w9u95Q4GxJ383B6EpFCWOJbwhfLn4HKGHulfrHDX14g</url>
+</WebLink>

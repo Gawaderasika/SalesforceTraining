@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bear</fullName>
+    <columns>NAME</columns>
+    <columns>Age__c</columns>
+    <columns>Birthdate__c</columns>
+    <columns>Height__c</columns>
+    <columns>Weight__c</columns>
+    <columns>Location__Latitude__s</columns>
+    <columns>Sex__c</columns>
+    <columns>Observation__c</columns>
+    <columns>Location__Longitude__s</columns>
+    <columns>Supervisor__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>Bear</label>
+</ListView>

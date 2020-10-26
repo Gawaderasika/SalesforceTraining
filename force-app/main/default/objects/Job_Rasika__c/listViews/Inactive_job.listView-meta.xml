@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inactive_job</fullName>
+    <columns>NAME</columns>
+    <columns>OBJECT_ID</columns>
+    <columns>Active__c</columns>
+    <columns>Certification_Required__c</columns>
+    <columns>Description__c</columns>
+    <columns>Expires_On__c</columns>
+    <columns>Hired_Applicants__c</columns>
+    <columns>Name__c</columns>
+    <columns>Number_of_Positions__c</columns>
+    <columns>Qualifications_Required__c</columns>
+    <columns>Required_Skills__c</columns>
+    <columns>Salary_Offered__c</columns>
+    <columns>Total_Applicants__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>Manager__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Expires_On__c</field>
+        <operation>greaterThan</operation>
+        <value>9/28/2020</value>
+    </filters>
+    <label>Inactive job</label>
+    <language>en_US</language>
+</ListView>

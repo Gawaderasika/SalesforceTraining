@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order</fullName>
+    <columns>NAME</columns>
+    <columns>Cart__c</columns>
+    <columns>Shipping_Address__c</columns>
+    <columns>subTotal__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>Order</label>
+</ListView>

@@ -14,16 +14,27 @@ myApp.controller("myController", ['$scope','myFactory',function($scope,factory) 
     $scope.IsVisible = true;
     $scope.objName;
     $scope.result = [];
+    $scope.fieldsShow = [];
     $scope.viewRecords = function(){
     	$scope.last;
     	$scope.start = $scope.first;
     	$scope.end = $scope.first+9;
     }
+    $scope.run = function(){
+        $scope.fieldsShow = [];
+    	$scope.fields.forEach(function(field) {
+      		if (field.selected) {
+        		$scope.fieldsShow.push(field.apiName);
+      		}
+    	});
+        var query = factory.getObjectQuery($scope.objName,'LIMIT 5',$scope.fieldsShow);
+    	factory.getRecords(query,getRecordsSuccess,onError);
+    }
     $scope.selectButton = function(obj){
         $scope.objName = obj;
-        $scope.fields = factory.getObjectAllField($scope.objName);
-    	var query = factory.getObjectQuery($scope.objName,'LIMIT 10');
-    	factory.getRecords(query,getRecordsSuccess,onError);
+        $scope.fields = factory.getObjectAllField($scope.objName, $scope.fieldsShow);
+    	// var query = factory.getObjectQuery($scope.objName,'LIMIT 10',$scope.fields);
+    	// factory.getRecords(query,getRecordsSuccess,onError);
     }
    
     $scope.deleteRecord = function(sObjectName, Id, onSuccess,onError) {

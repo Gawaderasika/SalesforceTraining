@@ -1,6 +1,10 @@
 <apex:page controller="AngularAssignmentController" sidebar="false" showHeader="false">
     
     <head>        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <apex:includeScript value="{!URLFOR($Resource.angularMin)}"/>
     <apex:includeScript value="{!URLFOR($Resource.jqueryMin)}"/>
     <apex:stylesheet value="{!URLFOR($Resource.MyListCSS)}"/>
@@ -13,21 +17,25 @@
     
     <html>
         <body ng-app = "myApp"  ng-controller="myController">
-            <button ng-click = "selectButton('Account')">
-                Account
-            </button>
-            <button ng-click = "selectButton('Contact')">
-                Contact
-            </button>
-            <button ng-click = "selectButton('Job_Rasika__c')">
-                Job
-            </button>
-            <button ng-click = "selectButton('Candidate_Rasika__c')">
-                Candidate
-            </button>
-            <button ng-click = "viewRecords()">
-                Previous
-            </button>
+            <div class = "main">
+                <h1 class = "header" ng-click = "selectButton('Account')">Account</h1>
+            	<h1 class = "header" ng-click = "selectButton('Contact')">Contact</h1>
+            	<h1 class = "header" ng-click = "selectButton('Job_Rasika__c')">Job</h1>
+            	<h1 class = "header" ng-click = "selectButton('Candidate_Rasika__c')">Candidate</h1>
+            </div>
+            <div id = "selectField">
+            	<div id = "headerField">
+            		<h3>Select Field</h3>
+            	</div>
+            	<div id = "fieldNav">
+            		<div ng-repeat = "field in fields">
+                        <input type = "checkbox" ng-value = "{{field.apiname}}" ng-model="field.selected"/>{{field.label}}
+    				</div>
+            	</div>
+            	<div id = "btnField">
+            		<button ng-click = "run()">Run</button>
+            	</div>
+            </div>
             <my-list fields= 'fields' records = 'result' 
                      s-object-name = 'contact' 
                      delete-action = 'deleteRecord(sObjectName, Id, onSuccess,onError)' >

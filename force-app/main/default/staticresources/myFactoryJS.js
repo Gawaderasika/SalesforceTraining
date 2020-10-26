@@ -58,8 +58,8 @@ myFactory.objectSchema = {
                 apiName:'Name'
             },
             {
-                label:'Account',
-                apiName:'Account'
+                label:'Department',
+                apiName:'Department'
             },
             {
                 label:'Phone',
@@ -79,7 +79,7 @@ myFactory.objectSchema = {
                 apiName:'Name'
             },
             {
-                label:'AccountNumber',
+                label:'Account',
                 apiName:'AccountNumber'
             },
             {
@@ -101,7 +101,7 @@ myFactory.objectSchema = {
             },
             {
                 label:'Active',
-                apiName:'Id'
+                apiName:'Active__c'
             },
             {
                 label:'Description',

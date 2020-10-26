@@ -25,6 +25,9 @@
             <button ng-click = "selectButton('Candidate_Rasika__c')">
                 Candidate
             </button>
+            <button ng-click = "viewRecords()">
+                Previous
+            </button>
             <my-list fields= 'fields' records = 'result' 
                      s-object-name = 'contact' 
                      delete-action = 'deleteRecord(sObjectName, Id, onSuccess,onError)' >

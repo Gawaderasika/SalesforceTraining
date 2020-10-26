@@ -2,7 +2,7 @@
     
     <head>      
     	<apex:includeScript value="{!URLFOR($Resource.angularMin)}"/>
-    <apex:includeScript value="{!URLFOR($Resource.jqueryMin)}"/>
+    	<apex:includeScript value="{!URLFOR($Resource.jqueryMin)}"/>
     	<apex:stylesheet value="{!URLFOR($Resource.rasika_css)}"/>
     	<apex:includeScript value="{!URLFOR($Resource.rasika_app)}"/>
     	<apex:includeScript value="{!URLFOR($Resource.rasika_factory)}"/>

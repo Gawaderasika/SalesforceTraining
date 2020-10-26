@@ -4,8 +4,10 @@ public class AccountBatchApex implements Database.Batchable<SObject>{
     }
     
     public void execute(Database.BatchableContext bc, List<Account> accListFromStartMethod){
+        Integer i=1;
         for(Account acc: accListFromStartMethod){
-            acc.Name = 'Batch Update: ' + acc.Name;
+            acc.Name = 'Account-'+ i;
+            i = i + 1;
         }
         UPDATE accListFromStartMethod;
     }

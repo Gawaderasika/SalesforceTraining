@@ -1,0 +1,43 @@
+#jobDescription{
+        	text-size: 10px;	
+        	text-decoration: underline;
+        	color: #2471A3;
+        }
+        #stepOne{
+        	color: #2471A3;
+        }
+        #mainblock{
+        	margin-top: 20px;
+        	margin-left: 200px;
+        	margin-right: 200px;
+        	border: solid;
+        	border-radius: 50px;
+        	padding: 50px;
+        	text-align: left;
+        }
+        #pageheader{
+        	background: lightblue;
+        }
+        .btnstyle{
+        	border: normal;
+        	border-radius: 5px;
+        	width: 150px;
+        	padding: 10px;
+        	margin-left: 100px;
+        }
+        .img1{
+        	height: 150px;
+        	margin-left: 330px;
+        }
+        *{
+        box-sizing: border-box;	
+        font-family: calibri;
+        }
+        .column{
+        	width: 50%;
+        }
+        .row:after{
+        	content: "";
+        	display: table;
+        	clear: both;
+        }

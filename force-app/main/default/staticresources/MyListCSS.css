@@ -2,15 +2,14 @@ body{
     position: relative;
 }
 .my-list-border{
-    border: 1px solid black;
     border-collapse: collapse;
 }
 .main{
     border: 2px solid;
-    background-color: #233309;
+    background-color: #2b5329;
     text-align: center;
     margin: auto;
-  	padding: 50px;
+  	padding: 30px;
 }
 .header{
     font-size: 30px;;
@@ -24,20 +23,19 @@ table{
 th{
     background-color: black;
     color: white;
-  	font-size: large;
     font-style: bold;
-  	padding: 20px;
+  	padding: 10px;
+    font-size: 20px;
 }
 tr:hover {background-color: #f5f5f5;}
 td {
-  padding: 20px;
-  font-size: large;
+    padding: 5px;
 }
 #divTable{
     margin-right: 100px;
     margin-top: 100px;
     float: right;
-  	width: 700px;
+  	width: 900px;
   	overflow: auto;
 }
 #selectField{
@@ -51,11 +49,11 @@ td {
     padding: 30px;
     width: 300px;
     margin-left: 100px;
-  	height: 300px;
+  	height: 250px;
   	overflow: auto;
 }
 #headerField{
-    padding: 30px;
+    padding: 20px;
     border: 2px solid;
     width: 300px;
     margin-left: 100px;
@@ -64,22 +62,22 @@ td {
     color: white;
 }
 #btnField{
-    padding: 30px;
+    padding: 20px;
     border: 2px solid;
     width: 300px;
     margin-left: 100px;
     background-color: #016064;
-    color: white;
+    text-align: center;
 }
 #headerField{
 }
 .btnNext {
     float:right;
-    background-color: #555555;
+    background-color: black;
   	font-size: 16px;
 }
 .btnPrev{
     float:left;
-    background-color: #555555;
+    background-color: black;
   	font-size: 16px;
 }

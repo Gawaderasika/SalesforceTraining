@@ -2,9 +2,29 @@ var myFactory = angular.module("myFactory", []);
       
 myFactory.factory("myFactory", function() {
     var factory = {};
-    factory.getObjectAllField = function(sObjectName, propName,objectFields){
+    factory.getObjectAllField = function(sObjectName, propName){
         let result = [];
         let fields = myFactory.objectSchema[sObjectName].fields; 
+        /*let List < Schema.SObjectType > gd = Schema.getGlobalDescribe().Values();  
+        let Map<String , Schema.SObjectType > globalDescription = Schema.getGlobalDescribe();  
+        for ( Schema.SObjectType f : gd ) {  
+            if(gd == sObjectName){
+                Schema.sObjectType objType = globalDescription.get(f.getDescribe().getName() );  
+    		Schema.DescribeSObjectResult r1 = objType.getDescribe();   
+    		let Map<String , Schema.SObjectField > mapFieldList = r1.fields.getMap();    
+    		for ( Schema.SObjectField field : mapFieldList.values() ) {    
+        		Schema.DescribeFieldResult fieldResult = field.getDescribe();       
+            	result.push(fieldResult.getName());
+    		}
+        }
+        map<string, string> fieldList = new map<string, string>();
+        map<string,SObjectField> fList = schema.getGlobalDescribe().get(sObjectName).getDescribe().fields.getMap();
+        for(string str: fList.keySet()){
+			fieldList.put(str, fList.get(str).getDescribe().getLabel());                
+        }
+        angular.forEach(fieldList,function(field){
+            result.push(field[str]);
+        });*/
         angular.forEach(fields,function(field){
             if(field[propName] != undefined)
                 result.push(field[propName]);
@@ -13,9 +33,16 @@ myFactory.factory("myFactory", function() {
         });
         return result;
     }
-    factory.getObjectQuery = function(sObjectName, limitClause, objectFields){
+    factory.disp = function(){
+        var x = document.getElementById("tDiv");
+  		x.style.display = "block";
+    }
+    factory.hide = function(){
+        var x = document.getElementById("tDiv");
+  		x.style.display = "none";
+    }
+    factory.getObjectQuery = function(sObjectName, objectFields, limitClause){
         let query = 'SELECT ';
-        //let fields = this.getObjectAllField(sObjectName,'apiName', objectFields); 
         angular.forEach(objectFields,function(field){
             query += field+',';
         });
@@ -23,6 +50,7 @@ myFactory.factory("myFactory", function() {
         query += ' FROM ' + sObjectName + ' ' + limitClause;
         return query;
     }
+    
     factory.getRecords = function(query,onSuccess,onError){
         AngularAssignmentController.getRecords(query,function(result,response){
             if(response.status){
@@ -32,6 +60,7 @@ myFactory.factory("myFactory", function() {
             }
         });
     }
+    
     factory.deleteRecord = function(sObjectName, Id, onSuccess,onError) {
         AngularAssignmentController.deleteRecord(sObjectName, Id, function(result, response){
             if(response.status){
@@ -41,7 +70,6 @@ myFactory.factory("myFactory", function() {
             }
         });
     }
-    
     return factory;
 });
 
@@ -66,21 +94,15 @@ myFactory.objectSchema = {
                 apiName:'Birthdate'
             },
             {
-                label:'CleanStatus',
-                apiName:'CleanStatus'
+                label:'AssistantPhone',
+                apiName:'AssistantPhone'
             },
-            {
-                label:'Owner',
-                apiName:'Owner'
-            },
+            
             {
                 label:'Department',
                 apiName:'Department'
             },
-            {
-                label:'DoNotCall',
-                apiName:'DoNotCall'
-            },
+            
             {
                 label:'Email',
                 apiName:'Email'
@@ -89,13 +111,10 @@ myFactory.objectSchema = {
                 label:'HomePhone',
                 apiName:'HomePhone'
             },
+            
             {
-                label:'LeadSource',
-                apiName:'LeadSource'
-            },
-            {
-                label:'MailingAddress',
-                apiName:'MailingAddress'
+                label:'MailingCity',
+                apiName:'MailingCity'
             }
         ]
     },
@@ -115,53 +134,32 @@ myFactory.objectSchema = {
                 apiName:'AccountNumber'
             },
             {
-                label:'Owner',
-                apiName:'Owner'
-            },
-            {
-                label:'RecordType',
-                apiName:'RecordType'
-            },
-            {
                 label:'Site',
                 apiName:'Site'
-            },
-            {
-                label:'AccountSource',
-                apiName:'AccountSource'
             },
             {
                 label:'AnnualRevenue',
                 apiName:'AnnualRevenue'
             },
             {
-                label:'CleanStatus',
-                apiName:'CleanStatus'
+                label:'BillingCity',
+                apiName:'BillingCity'
             },
+            {
+                label:'DunsNumber',
+                apiName:'DunsNumber'
+            },
+            
             {
                 label:'NumberOfEmployees',
                 apiName:'NumberOfEmployees'
             },
-            {
-                label:'Industry',
-                apiName:'Industry'
-            },
-            {
-                label:'Ownership',
-                apiName:'Ownership'
-            },
+            
             {
                 label:'Phone',
                 apiName:'Phone'
             },
-            {
-                label:'ShippingAddress',
-                apiName:'ShippingAddress'
-            },
-            {
-                label:'Type',
-                apiName:'Type'
-            }
+            
         ]
     },
     'Job_Rasika__c' : {
@@ -178,10 +176,6 @@ myFactory.objectSchema = {
             {
                 label:'Active',
                 apiName:'Active__c'
-            },
-            {
-                label:'Certification',
-                apiName:'Certification_Required__c'
             },
             {
                 label:'Description',
@@ -202,14 +196,6 @@ myFactory.objectSchema = {
             {
                 label:'Number of Positions',
                 apiName:'Number_of_Positions__c'
-            },
-            {
-                label:'Qualifications',
-                apiName:'Qualifications_Required__c'
-            },
-            {
-                label:'Required Skills',
-                apiName:'Required_Skills__c'
             },
             {
                 label:'Salary Offered',
@@ -263,10 +249,6 @@ myFactory.objectSchema = {
             {
                 label:'Job Rasika',
                 apiName:'Job_Rasika__c'
-            },
-            {
-                label:'Full Name',
-                apiName:'Full_Name__c'
             },
             {
                 label:'PAN Card',

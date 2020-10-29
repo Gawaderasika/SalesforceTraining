@@ -3,14 +3,14 @@
     <apiVersion>49.0</apiVersion>
     <isExposed>true</isExposed>
     <targets>
-	    <target>lightning__RecordPage</target>
+        <target>lightning__RecordPage</target>
     </targets>
     <targetConfigs>
-	    <targetConfig targets="lightning__RecordPage">
-		    <objects>
-			    <object>Trip__c</object>
+        <targetConfig targets="lightning__RecordPage">
+            <objects>
+                <object>Trip__c</object>
                 <object>Bear__c</object>
-		    </objects>
-	    </targetConfig>
+            </objects>
+        </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

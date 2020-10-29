@@ -7,12 +7,12 @@ export default class ChildVideo extends LightningElement {
     }
     handleMe(){
         const childEvent=new CustomEvent('buttonclick',
-            {
-                detail: {
-                    firstparam:'first value',
-                    secondparam:'second value'
-                }
-            });
+        {
+            detail: {
+                firstparam:'first value',
+                secondparam:'second value'
+            }
+        });
         this.dispatchEvent(childEvent);
     }
 }

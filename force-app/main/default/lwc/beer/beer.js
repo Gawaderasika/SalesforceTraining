@@ -1,8 +1,8 @@
 import { LightningElement, api } from 'lwc';
 
 export default class Beer extends LightningElement {
-   greetings = 'World';
+   greetings = 'World !!';
    handleChange(event){
-      this.greetings = event.target.value;
+      this.greetings = event.targer.value;
    }
 }

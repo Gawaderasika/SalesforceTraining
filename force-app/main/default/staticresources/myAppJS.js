@@ -1,25 +1,11 @@
 var myApp = angular.module("myApp", ["myFactory","myList"]);
 myApp.controller("myController", ['$scope','myFactory',function($scope,factory) {
-    /*$scope.currentPage = 0;
-    myapp.filter('displayPageData', function() {    
-                return function(input, start) {    
-                start = +start; //parse to int    
-                return input.slice(start);    
-    	}    
-             }); */
-    $scope.first = 1;
-    $scope.last;
-    $scope.start;
-    $scope.end;
-    $scope.IsVisible = true;
+   
     $scope.objName;
-    $scope.result = [];
+    //$scope.result = [];
     $scope.fieldsShow = [];
-    $scope.viewRecords = function(){
-    	$scope.last;
-    	$scope.start = $scope.first;
-    	$scope.end = $scope.first+9;
-    }
+    $scope.limitRecords = 'LIMIT 100';
+    
     $scope.run = function(){
         $scope.fieldsShow = [];
     	$scope.fields.forEach(function(field) {
@@ -27,16 +13,18 @@ myApp.controller("myController", ['$scope','myFactory',function($scope,factory) 
         		$scope.fieldsShow.push(field.apiName);
       		}
     	});
-        var query = factory.getObjectQuery($scope.objName,'LIMIT 5',$scope.fieldsShow);
+        var query = factory.getObjectQuery($scope.objName,$scope.fieldsShow,$scope.limitRecords);
     	factory.getRecords(query,getRecordsSuccess,onError);
+      
+        factory.disp();
     }
+    
     $scope.selectButton = function(obj){
         $scope.objName = obj;
-        $scope.fields = factory.getObjectAllField($scope.objName, $scope.fieldsShow);
-    	// var query = factory.getObjectQuery($scope.objName,'LIMIT 10',$scope.fields);
-    	// factory.getRecords(query,getRecordsSuccess,onError);
+        $scope.fields = factory.getObjectAllField($scope.objName);
+        factory.hide();
     }
-   
+   	
     $scope.deleteRecord = function(sObjectName, Id, onSuccess,onError) {
         factory.deleteRecord(sObjectName, Id, removeRecord,onError);
     }
@@ -55,8 +43,24 @@ myApp.controller("myController", ['$scope','myFactory',function($scope,factory) 
     }
     
     function getRecordsSuccess(result){
-        $scope.result = result;
+        //$scope.testResult = {};
+        $scope.resultData = [];
+        $scope.result1 = [];
+        result.forEach(data => {
+            $scope.fieldsShow.forEach(x => {
+            if(data.hasOwnProperty(x)){
+            $scope.result1.push(data[x]);
+        }else{
+           $scope.result1.push('NA');
+        }
+        })
+           $scope.resultData.push($scope.result1);
+        })
+          console.log('data',$scope.resultData);
         $scope.$apply();
+        /*$scope.result = result;
+        $scope.$apply();*/
+        
     }
     
     function onError(message){

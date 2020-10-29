@@ -30,19 +30,19 @@ myList.directive("myList",function(){
     `
     	<div id = "divTable">
      		<table class="table table-bordered" id = "recordTable">
-                <thead><tr class = "tableHeader">
+                <tr class = "tableHeader">
             		<th ng-repeat = "field in fields" class="my-list-border" ng-show = "field.selected" class = "tHeader">
                 		{{field.label}}
             		</th>
-        		</tr></thead>
-                 	<tr ng-repeat = "record in records" class = "tableRecords">
-                 
-                 {{i}}
-        			
-                 </tr>
+        		</tr>
+                <tr ng-repeat = "record in records| limitTo : 3 : start" class = "tableRecords">
+                	<td ng-repeat = "field in fields" ng-show = "field.selected">
+                 		{{record[field.apiName]}}
+                 	</td>
+                </tr>
      		</table>
-     		<button class="button btnPrev" ng-click = "previous()">previous</button>
-     		<button class="button btnNext" ng-click = "next()">next</button>
+     		<button class="button btnPrev" ng-click = "previous()">Previous</button>
+     		<button class="button btnNext" ng-click = "next()">Next</button>
      	</div>
     `;
     return directive;

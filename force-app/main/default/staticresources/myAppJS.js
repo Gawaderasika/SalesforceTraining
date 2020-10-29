@@ -2,7 +2,7 @@ var myApp = angular.module("myApp", ["myFactory","myList"]);
 myApp.controller("myController", ['$scope','myFactory',function($scope,factory) {
    
     $scope.objName;
-    //$scope.result = [];
+    $scope.result = [];
     $scope.fieldsShow = [];
     $scope.limitRecords = 'LIMIT 100';
     
@@ -44,23 +44,33 @@ myApp.controller("myController", ['$scope','myFactory',function($scope,factory) 
     
     function getRecordsSuccess(result){
         //$scope.testResult = {};
-        $scope.resultData = [];
-        $scope.result1 = [];
+        /*$scope.resultData = [];
+        $scope.result1 = {};
         result.forEach(data => {
             $scope.fieldsShow.forEach(x => {
-            if(data.hasOwnProperty(x)){
-            $scope.result1.push(data[x]);
-        }else{
-           $scope.result1.push('NA');
-        }
+            	if(data.hasOwnProperty(x)){
+            		$scope.result1.push(x,data[x]);
+        		}
+            	else
+            	{
+           			$scope.result1.push(x, 'NA');
+            	}
+        	})
+           	$scope.resultData.push($scope.result1);
         })
-           $scope.resultData.push($scope.result1);
-        })
-          console.log('data',$scope.resultData);
-        $scope.$apply();
-        /*$scope.result = result;
+        console.log('data',$scope.resultData);
         $scope.$apply();*/
-        
+        /*result.forEach((record, val) => {
+            	var data = {};
+                $scope.fieldsShow.forEach((fieldApiName, value) => {
+            		if(!record.hasOwnProperty(fieldApiName)){
+            			record[fieldApiName]="NA";
+        			}
+        		})
+        	}
+        )*/
+        $scope.result = result;
+        $scope.$apply();
     }
     
     function onError(message){

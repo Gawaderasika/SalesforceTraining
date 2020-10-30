@@ -8,9 +8,9 @@
     	<apex:includeScript value="{!URLFOR($Resource.angularMin)}"/>
     	<apex:includeScript value="{!URLFOR($Resource.jqueryMin)}"/>
     	<apex:stylesheet value="{!URLFOR($Resource.App_CSS,'rasika_css.css')}"/>
-    	<apex:includeScript value="{!URLFOR($Resource.App_JS,'rasika_app.js')}"/>
-    	<apex:includeScript value="{!URLFOR($Resource.App_JS,'rasika_factory.js')}"/>
-    	<apex:includeScript value="{!URLFOR($Resource.App_JS,'rasika_table.js')}"/>
+    	<apex:includeScript value="{!URLFOR($Resource.App_JS_app,'rasika_app.js')}"/>
+    	<apex:includeScript value="{!URLFOR($Resource.App_JS_factory,'rasika_factory.js')}"/>
+    	<apex:includeScript value="{!URLFOR($Resource.App_JS_table,'rasika_table.js')}"/>
     </head>
     <body ng-app = "rasika_app"  ng-controller="rasika_controller">
         <div class = "main">

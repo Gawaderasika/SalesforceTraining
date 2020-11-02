@@ -8,5 +8,13 @@
         <plural>true</plural>
         <value>StudentMaster2s</value>
     </caseValues>
+    <recordTypes>
+        <label><!-- Post Graduate --></label>
+        <name>Post_Graduate</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Under Graduate --></label>
+        <name>Under_Graduate</name>
+    </recordTypes>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

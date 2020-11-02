@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- State --></label>
+    <name>State__c</name>
+    <picklistValues>
+        <masterLabel>Alabama</masterLabel>
+        <translation><!-- Alabama --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Alaska</masterLabel>
+        <translation><!-- Alaska --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Christmas Island</masterLabel>
+        <translation><!-- Christmas Island --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gujrat</masterLabel>
+        <translation><!-- Gujrat --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Madhyapradesh</masterLabel>
+        <translation><!-- Madhyapradesh --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Maharashtra</masterLabel>
+        <translation><!-- Maharashtra --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Michigan</masterLabel>
+        <translation><!-- Michigan --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Victoria</masterLabel>
+        <translation><!-- Victoria --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Western Australia</masterLabel>
+        <translation><!-- Western Australia --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

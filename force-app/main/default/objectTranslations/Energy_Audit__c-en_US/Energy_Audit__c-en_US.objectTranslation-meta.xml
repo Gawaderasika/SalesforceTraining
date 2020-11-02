@@ -9,4 +9,16 @@
         <value>Energy Audits</value>
     </caseValues>
     <startsWith>Vowel</startsWith>
+    <webLinks>
+        <label><!-- Audit_Guidelines --></label>
+        <name>Audit_Guidelines</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Audit_Rules --></label>
+        <name>Audit_Rules</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- US_Average_Energy_Costs --></label>
+        <name>US_Average_Energy_Costs</name>
+    </webLinks>
 </CustomObjectTranslation>

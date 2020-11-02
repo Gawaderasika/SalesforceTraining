@@ -8,5 +8,9 @@
         <plural>true</plural>
         <value>Job Applications</value>
     </caseValues>
+    <sharingReasons>
+        <label><!-- Apex sharing reason --></label>
+        <name>Apex_sharing_reason</name>
+    </sharingReasons>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

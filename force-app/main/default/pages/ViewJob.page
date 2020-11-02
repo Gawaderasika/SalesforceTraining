@@ -1,12 +1,97 @@
-<apex:page controller="ViewJob"  showHeader="false" sidebar="false" >
-    <apex:pageBlock title="Job Details">
+<apex:page controller="ViewJob">
+  
+    <!-- jQuery show()/hide() method -->
+ 	<apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"/>
+    <script>
+		$(document).ready(function(){
+        	$('[id$=btn]').click(function(){
+            	$('[id$=candidateForm]').toggle();
+            });
+        });
+	</script>
+    
+
+    <!-- Details of job -->
+    <apex:outputPanel id="JobBlock">
+    	<apex:pageBlock title="Job Details">
         <apex:pageBlockSection >
-            <c:RelatedListComponents job="{!job}" fields1="{!fields1}"></c:RelatedListComponents>
+        	<c:RelatedListComponents job="{!job}" jobRecords="{!jobRecords}"></c:RelatedListComponents>
         </apex:pageBlockSection>
-        </apex:pageBlock>
-    <apex:pageBlock title="Candidate Details">
-        <apex:pageBlockSection >
-            <c:RelatedListComponent records="{!records}" fields="{!fields}"></c:RelatedListComponent>
+    	</apex:pageBlock>
+    </apex:outputPanel>
+       
+    <script type="text/javascript">
+    function getJob() {
+        var StringURL = window.location.href;
+        var JobId = StringURL.split('=')[2]; 
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.ViewJob.getJobs}', JobId,
+            function(result, event){
+                if (event.status) {
+                    alert(Object.values(result)[0]);
+                }else {
+                    alert("responseErrors");
+                }
+            }, 
+            {escape: true}
+        );
+    }
+    </script>
+    <apex:outputPanel >
+    	<input type="button" value="Increase Positions" onclick = "getJob()"/>
+    	<apex:actionSupport event="onclick" reRender="JobBlock"/><br/><br/>
+    </apex:outputPanel>
+        
+    <input type="button" value="New Registration" id="btn"/>
+    <!-- New candidate registration -->
+	<apex:form id="candidateForm" styleClass="visibility: hidden">
+        <!-- <apex:commandButton value="New Registration" action="{!createForm}"/>
+        <apex:commandButton id="btn" value="New Registration" action="{!ShowPB}"/>
+    	<apex:pageBlock mode="edit" rendered="{!PBFlag}"> -->
+        <apex:pageBlock mode="edit">
+                <apex:pageBlockSection >
+                <apex:inputField value="{!c.Salutation__c}" id="Salutation__c"/><br/><br/><br/>
+                <apex:inputField value="{!c.First_Name__c}" id="First_Name__c"/><br/><br/><br/>
+            	<apex:inputField value="{!c.Last_Name__c}" id="Last_Name__c"/><br/><br/><br/>
+            	<apex:inputField value="{!c.DOB__c}" id="DOB__c"/><br/><br/><br/>
+                <apex:inputField value="{!c.Email__c}" id="Email__c"/><br/><br/><br/>
+                <apex:inputField value="{!c.Country__c}" id="Country__c"/><br/><br/><br/>
+            	<apex:inputField value="{!c.State__c}" id="State__c"/><br/><br/><br/>
+                <apex:inputField value="{!c.Job_Rasika__c}" id="Job_Rasika__c"/><br/><br/><br/>
+            	<apex:inputField value="{!c.Application_Date__c}" id="Application_Date__c"/><br/><br/><br/>
+            	<apex:inputField value="{!c.Expected_Salary__c}" id="Expected_Salary__c"/><br/><br/><br/>
+                <apex:inputField value="{!c.Status__c}" id="Status__c"/><br/><br/><br/><br/>
+				<apex:commandButton value="Save" action="{!save}" reRender="id1" />
+            </apex:pageBlockSection>
+        </apex:pageBlock> 
+ 	
+    </apex:form>
+    
+    <!-- Details of candidates -->
+    <apex:outputPanel id="CandidateBlock">
+    	<apex:pageBlock title="Candidate Details">
+        <apex:pageBlockSection id="id1">
+            <c:RelatedListComponent candidate="{!candidate}" candidateRecords="{!candidateRecords}"></c:RelatedListComponent>
         </apex:pageBlockSection>
     </apex:pageBlock>
+    </apex:outputPanel>
+    
+    
+    <!-- <apex:dataTable value="{!Job_Rasika__c.Candidate_Rasika__r}" var="cnd" cellPadding="4" border="1">
+    	<apex:column >
+        	<apex:outputPanel >
+            	<apex:actionSupport event="onmouseover" rerender="detail"> 
+                	<apex:param name="cid" value="{!cnd.id}"/>
+                </apex:actionSupport> 
+                {!cnd.Name}
+            </apex:outputPanel> 
+        </apex:column>
+    </apex:dataTable>
+	<apex:outputPanel id="detail">
+        <apex:actionStatus startText="Requesting...">
+            <apex:facet name="stop">
+                <apex:detail subject="{!$CurrentPage.parameters.cid}" relatedList="false" title="false"/>
+            </apex:facet>
+        </apex:actionStatus>
+    </apex:outputPanel> -->
 </apex:page>

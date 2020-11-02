@@ -1,0 +1,32 @@
+<!--====================================================--> 
+<!--Name: AccountRegistrationStandard --> 
+<!--Copyright notice: --> 
+<!--====================================================--> 
+<!--====================================================--> 
+<!-- Purpose: Visual Force page to display Job registration form using standard controller--> 
+<!--------- --> 
+<!--====================================================--> 
+<!--====================================================--> 
+<!-- History --> 
+<!-- ------- --> 
+<!-- VERSION   AUTHOR         DATE                DETAIL          RELEASE/CSR --> 
+<!-- 1.0 -     RasikaGawade   08/09/2020          INITIAL DEVELOPMENT --> 
+<!--====================================================--> 
+<apex:page standardController="Account">
+    <apex:form >
+    	<apex:pageBlock mode="edit">
+            <apex:pageBlockSection >
+            	<apex:inputField value="{!Account.Name}"/>
+                <apex:inputField value="{!Account.Site}"/>
+                <apex:inputField value="{!Account.AnnualRevenue}"/>
+                <apex:inputField value="{!Account.DunsNumber}"/>
+                <apex:inputField value="{!Account.NumberOfEmployees}"/>
+                <apex:inputField value="{!Account.Phone}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="save" action="{!save}"/>
+                <apex:commandButton value="edit" action="{!edit}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

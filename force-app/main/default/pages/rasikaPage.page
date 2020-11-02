@@ -1,0 +1,97 @@
+<apex:page controller="rasikaClass" sidebar="false" showHeader="false">
+<html>
+    <head>        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    	<apex:includeScript value="{!URLFOR($Resource.angularMin)}"/>
+    	<apex:includeScript value="{!URLFOR($Resource.jqueryMin)}"/>
+    	<apex:stylesheet value="{!URLFOR($Resource.rasika_css)}"/>
+    	<apex:includeScript value="{!URLFOR($Resource.rasika_app)}"/>
+    	<apex:includeScript value="{!URLFOR($Resource.rasika_factory)}"/>
+    	<apex:includeScript value="{!URLFOR($Resource.MyJsJS)}"/>
+    	<apex:includeScript value="{!URLFOR($Resource.rasika_table)}"/>
+    	<apex:includeScript value="{!URLFOR($Resource.myJSVendor)}"/>
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
+        <script>
+		function newAccountRecord() {
+			var x = document.getElementById('newAccountPage');
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			}
+            else{
+				x.style.display = 'none';
+			}
+		}
+        function newContactRecord() {
+			var x = document.getElementById('newContactPage');
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			}
+            else{
+				x.style.display = 'none';
+			}
+		}
+        function newCandidateRecord() {
+			var x = document.getElementById('newCandidatePage');
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			}
+            else{
+				x.style.display = 'none';
+			}
+		}
+        function newJobRecord() {
+			var x = document.getElementById('newJobPage');
+			if (x.style.display === 'none') {
+				x.style.display = 'block';
+			}
+            else{
+				x.style.display = 'none';
+			}
+		}
+        </script>
+    </head>
+    <body ng-app = "rasikaApp"  ng-controller="myController">
+        <div class = "main">
+        	<h1 class = "header" ng-click = "selectButton('Account')">ACCOUNT</h1>
+            <h1 class = "header" ng-click = "selectButton('Contact')">CONTACT</h1>
+            <h1 class = "header" ng-click = "selectButton('Job_Rasika__c')">JOB</h1>
+            <h1 class = "header" ng-click = "selectButton('Candidate_Rasika__c')">CANDIDATE</h1>
+        	<button onclick="newAccountRecord()">New Account</button>
+            <button onclick="newContactRecord()">New Contact</button>
+            <button onclick="newCandidateRecord()">New Candidate</button>
+            <button onclick="newJobRecord()">New Job</button>
+        </div>
+        <div id = "selectField">
+            <div id = "headerField">
+            	<h3>Select Field</h3>
+            </div>
+            <div id = "fieldNav">
+            	<div ng-repeat = "field in fields">
+                	<input type = "checkbox" ng-value = "{{field.apiname}}" ng-model="field.selected"/>{{field.label}}
+    			</div>
+            </div>
+            <div id = "btnField">
+            	<button ng-click = "run()">Run</button>
+            </div>
+        </div>
+        <div id = "tDiv">
+            <rasika_table totPage = 'totPage' fields= 'fields' records = 'result' s-object-name = 'sObjectName' delete-action = 'deleteRecord(sObjectName, Id, onSuccess,onError)' ></rasika_table>
+        </div>
+       	<div id="newAccountPage" style = "display:none;">
+            <apex:include pagename="newAccountRecord"/>
+        </div>
+        <div id="newContactPage" style = "display:none;">
+            <apex:include pagename="newContactRecord"/>
+        </div>
+        <div id="newCandidatePage" style = "display:none;">
+            <apex:include pagename="CandidateRegistrationStandard"/>
+        </div>
+        <div id="newJobPage" style = "display:none;">
+            <apex:include pagename="JobRegistrationStandard"/>
+        </div>
+	</body>
+</html>
+</apex:page>

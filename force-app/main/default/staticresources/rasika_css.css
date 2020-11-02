@@ -81,3 +81,12 @@ td {
     background-color: black;
   	font-size: 16px;
 }
+#pageNo{
+    text-align: center;
+}
+#divAccount{
+    width: 350px;
+}
+#divContact{
+    width: 350px;
+}

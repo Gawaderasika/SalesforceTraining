@@ -1,0 +1,44 @@
+<template>
+    <c-section id={layoutItem.id} if:true={isSection} repeater-index={repeaterIndex} section-header={layoutItem.label} header-style={layoutItem.headerStyle}>
+        <c-layout if:true={hasChild} records={records} repeater-index={repeaterIndex} current-record-id={currentRecordId} onupdaterecord={handleRecordUpdate} lst-layouts={layoutItem.childs}></c-layout>
+    </c-section>
+    <c-repeater if:true={isRepeater} records={records} lst-layouts={layoutItem.childs} max-length={unitCount} onremoverecord={handleRemoveRecord} onaddrecord={handleAddRecord}>
+    </c-repeater>
+    <span if:true={isGridCell} style={layoutItem.style}>
+        <c-layout if:true={hasChild} records={records} repeater-index={repeaterIndex} current-record-id={currentRecordId} onupdaterecord={handleRecordUpdate} lst-layouts={layoutItem.childs}></c-layout>
+    </span>
+    <span if:true={isGrid}>
+        <c-layout if:true={hasChild} records={records} repeater-index={repeaterIndex} current-record-id={currentRecordId} onupdaterecord={handleRecordUpdate} lst-layouts={layoutItem.childs}></c-layout>
+    </span>
+    <c-tab if:true={isTabs} id={layoutItem.id} current-record-id={currentRecordId} records={records} repeater-index={repeaterIndex} label={layoutItem.label} tabs={layoutItem.childs} show-error-indicator={layoutItem.showErrorIndicator} value={layoutItem.value} title={layoutItem.title} icon-name={layoutItem.iconName} icon-assistive-text={layoutItem.iconAssistiveText}  variant={layoutItem.variant} active-tab-value={layoutItem.activeTabValue} onactive={handleTabChange}> 
+    </c-tab>
+   
+    <c-accordion if:true={isAccordion} id={layoutItem.id} repeater-index={repeaterIndex} onupdaterecord={handleRecordUpdate} title={layoutItem.label} active-section-name={layoutItem.activeSectionName} open-multiple-sections=false>
+        <c-layout if:true={hasChild} records={records} repeater-index={repeaterIndex} current-record-id={currentRecordId} onupdaterecord={handleRecordUpdate} lst-layouts={layoutItem.childs}></c-layout>
+    </c-accordion>
+    <c-tooltip if:true={isTootip} id={layoutItem.id} content={layoutItem.content} variant={layoutItem.variant} icon-name={layoutItem.iconName}>
+        <c-layout if:true={hasChild} records={records} repeater-index={repeaterIndex} current-record-id={currentRecordId} onupdaterecord={handleRecordUpdate} lst-layouts={layoutItem.childs}></c-layout>
+    </c-tooltip>
+    <c-page-header if:true={isPageHeader} id={layoutItem.id} repeater-index={repeaterIndex} title={layoutItem.title} sub-title={layoutItem.subTitle} icon-url={layoutItem.iconUrl}>
+        <c-layout if:true={hasChild} records={records} repeater-index={repeaterIndex} current-record-id={currentRecordId} onupdaterecord={handleRecordUpdate} lst-layouts={layoutItem.childs}></c-layout>
+    </c-page-header>
+   
+    <c-accordion-section if:true={isAccordionSection} id={layoutItem.id} repeater-index={repeaterIndex}  label={layoutItem.label}>
+        <c-layout if:true={hasChild} records={records} repeater-index={repeaterIndex} current-record-id={currentRecordId} onupdaterecord={handleRecordUpdate} lst-layouts={layoutItem.childs}></c-layout>
+    </c-accordion-section>
+    <c-modal if:true={isModal} id={layoutItem.id} repeater-index={repeaterIndex} is-open-modal={} header-text={layoutItem.headerText} footer-text={layoutItem.footerText} modal-content={layoutItem.modalContent} content-class={layoutItem.contentClass} header-class={layoutItem.headerClass} footer-class={layoutItem.footerClass} content-style={layoutItem.contentStyle} footer-style={layoutItem.footerStyle} header-style={layoutItem.headerStyle}>
+        <c-layout if:true={hasChild} records={records} repeater-index={repeaterIndex} current-record-id={currentRecordId} onupdaterecord={handleRecordUpdate} lst-layouts={layoutItem.childs}></c-layout>
+    </c-modal>
+   
+    <c-datatable if:true={isTable} id={layoutItem.id} columns ={layoutItem.columns} label={layoutItem.label} object-name={objectApiName} records={records} model={layoutItem.model} row-action={layoutItem.rowaction} table-action={layoutItem.tableaction} onrowaction={handleRowAction} ontableaction={handleTableAction}></c-datatable>
+    <c-button if:true={isButton} id={layoutItem.id} label={layoutItem.label} name={layoutItem.label} onbuttonclick={buttonClick} value={layoutItem.value} type={layoutItem.type} variant={layoutItem.buttonType} icon-name={layoutItem.iconName} icon-position={layoutItem.iconPosition} title={layoutItem.title} component-style={layoutItem.style}></c-button>
+    <c-form if:true={isForm} id={layoutItem.id} onload={onloadComponent} action-onload={layoutItem.onload} columns-view={columnView} model={layoutItem.model} current-record-id={currentRecordId} onupdaterecord={handleRecordUpdate} records={records} repeater-index={repeaterIndex} fields={layoutItem.fields}></c-form>
+    <!--onupdtdependntfldvalue={updtDependntFldValue}-->
+   <c-field if:true={isField} id={layoutItem.id} api-name={layoutItem.name}  records={records} repeater-index={repeaterIndex} label={layoutItem.label} type={layoutItem.type} ></c-field>
+    <c-card if:true={isCard} id={layoutItem.id} title={layoutItem.label} repeater-index={repeaterIndex}>
+        <c-layout if:true={hasChild} records={records} repeater-index={repeaterIndex} current-record-id={currentRecordId} onupdaterecord={handleRecordUpdate} lst-layouts={layoutItem.childs}></c-layout>
+   </c-card>
+    <c-modal is-open-modal={isModalOpen} if:true={isModalOpen}>
+        <c-layout-viewer layout-name={layoutName}  ></c-layout-viewer>
+    </c-modal>
+</template>

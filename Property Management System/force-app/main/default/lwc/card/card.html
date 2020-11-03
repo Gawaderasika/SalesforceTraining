@@ -1,0 +1,8 @@
+<template>
+    <lightning-card variant={variant} icon-name={iconName} title={title}>
+        <p slot="actions"> <slot name="action"></slot></p>
+        <p class="slds-p-horizontal_small">{Content}</p>
+        <slot></slot>
+        <p slot="footer"><slot name="footer"></slot></p>
+    </lightning-card>
+</template>

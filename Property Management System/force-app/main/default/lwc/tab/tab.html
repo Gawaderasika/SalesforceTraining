@@ -1,0 +1,23 @@
+<template>
+        <!--  
+                        value={tab.title}
+                        onactive={handleActive}
+
+         -->
+    <lightning-tabset active-tab-value={activeTabValue} variant={variant}>
+        <template for:each={tabs} for:item="tab" >
+            <lightning-tab 
+                label={tab.label} 
+                title={tab.title} 
+                icon-name={tab.iconName} 
+                icon-assistive-text={tab.iconAssistiveText}
+                show-error-indicator={tab.showErrorIndicator}
+                class={tab.classes}
+                id={tab.id}
+                style={tab.componentStyle}
+                key={tab.label}>
+                <c-layout  if:true={tab.isShow} records={records} current-record-id={currentRecordId} onupdaterecord={handleRecordUpdate} lst-layouts={tab.childs}></c-layout>
+            </lightning-tab>
+        </template>
+    </lightning-tabset>
+</template>

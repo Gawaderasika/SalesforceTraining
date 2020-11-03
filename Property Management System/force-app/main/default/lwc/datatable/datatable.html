@@ -1,0 +1,28 @@
+<template>
+    <c-page-header if:true={hasTableActions} title={label} sub-title={title} icon-url={iconName}>
+        <template for:each={tableAction} for:item="button">
+            <c-button key={button.name} label={button.label} name={button.name} type={button.type}
+                onbuttonclick={handleButtonAction}></c-button>
+               
+        </template>
+    </c-page-header>
+    <div class={componentStyle}>
+        <lightning-datatable if:true={showrecords} columns={tableColumns} data={recordstoShow} key-field={keyField}
+            hide-checkbox-column={hideCheckboxColumn} show-row-number-column={showRowNumberColumn}
+            row-number-offset={rowNumberOffset} resize-column-disabled={resizeColumnDisabled}
+            min-column-width={minColumnWidth} max-column-width={maxColumnWidth} resize-step={resizeStep}
+            sorted-by={sortedBy} sorted-direction={sortedDirection} default-sort-direction={defaultSortDirection}
+            enable-infinite-loading={enableInfiniteLoading} load-more-offset={loadMoreOffset} is-loading={isLoading}
+            errors={errors} draft-values={draftValues} hide-table-header={hideTableHeader}
+            suppress-bottom-bar={suppressBottomBar} onrowaction={handleRowAction}></lightning-datatable>
+            <div if:false={showrecords}>
+                No Reservations to show.
+            </div> 
+        
+    </div>
+    <c-modal if:true={showModal} is-open-modal={showModal} header-text={headerText} modal-content={modalContent} onmodalclose={handleCloseModal} is-show-cancel-button-style={cancelButtonStyle}>
+        <span slot="footerSlot">
+            <lightning-button label="Delete" name="Delete" variant="brand" onclick={handleConfirmButtonAction} title="Delete"></lightning-button>
+        </span>
+    </c-modal>
+</template>

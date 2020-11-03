@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>ArrivalDateShouldBeGreaterThanOrEqualToTodayDate</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Arrival date should be greater than or equal to Today&apos;s date</shortDescription>
+        <value>Arrival Date should be greater than or equal to Today&apos;s Date.</value>
+    </labels>
+    <labels>
+        <fullName>ArrivalDateShouldBeGreaterThenOrEqualToTodayDate</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Start date should be greater then or equal to Today date</shortDescription>
+        <value>Start Date should be greater than or equal to Today&apos;s Date.</value>
+    </labels>
+    <labels>
+        <fullName>ArrivaldateOrDeparturedateismissing</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Start Date Or End Date is missing</shortDescription>
+        <value>Start Date Or End Date is missing.</value>
+    </labels>
+    <labels>
+        <fullName>Can_t_cancel_service_interruption</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cant  service interruption</shortDescription>
+        <value>Cant cancel service interruption without cancellation reason</value>
+    </labels>
+    <labels>
+        <fullName>Cancelled_Cancel_Error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cant cancel record</shortDescription>
+        <value>Reservation is already cancelled</value>
+    </labels>
+    <labels>
+        <fullName>Cancelled_CheckIn_Error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cant Check In record</shortDescription>
+        <value>You cannot check in after cancelled</value>
+    </labels>
+    <labels>
+        <fullName>Cancelled_CheckIn_Res_Error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cant cancel record</shortDescription>
+        <value>You cannot check in for cancelled reservation</value>
+    </labels>
+    <labels>
+        <fullName>Checked_Out_Cancel_Error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cant cancel record</shortDescription>
+        <value>You cannot cancel reservation</value>
+    </labels>
+    <labels>
+        <fullName>Checked_Out_CheckIn_Error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cant Check In record</shortDescription>
+        <value>You cannot check in after checked out</value>
+    </labels>
+    <labels>
+        <fullName>Checked_Out_Edit_Error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cant edit record</shortDescription>
+        <value>You cannot edit reservation</value>
+    </labels>
+    <labels>
+        <fullName>DepartureDateShouldBeGreaterThanArrivalDate</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Departure date should be greater than Arrival date</shortDescription>
+        <value>Departure Date should be greater than Arrival Date.</value>
+    </labels>
+    <labels>
+        <fullName>DepartureDateShouldBeGreaterThenArrivalDate</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>End Date should be greater then Start Date</shortDescription>
+        <value>End Date should be greater than Start Date.</value>
+    </labels>
+    <labels>
+        <fullName>DuplicateEntryFoundPleaseCheckDateAndUnit</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Duplicate entry found please check date and unit</shortDescription>
+        <value>Duplicate entry found please check date and unit.</value>
+    </labels>
+    <labels>
+        <fullName>EndDateShouldBeGreaterThanTodayDate</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>End Date should be greater than Start Date</shortDescription>
+        <value>End Date should be greater than Today’s Date.</value>
+    </labels>
+    <labels>
+        <fullName>EndDateShouldBeGreaterThenStartDate</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>End Date should be greater then Start Date</shortDescription>
+        <value>End Date should be greater than Start Date.</value>
+    </labels>
+    <labels>
+        <fullName>Help_user_manual</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Open User  Manual.</shortDescription>
+        <value>http://help.enzigma.com/support/solutions/articles/3000096766-pwr-property-manager-user-manual</value>
+    </labels>
+    <labels>
+        <fullName>Interruption_is_already_reserved</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Interruption is already reserved</shortDescription>
+        <value>Service interruption is already scheduled.</value>
+    </labels>
+    <labels>
+        <fullName>MultipleUnitTypesValidation</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MultipleUnitTypesValidation</shortDescription>
+        <value>You can not select multiple unit types at a time.</value>
+    </labels>
+    <labels>
+        <fullName>Page_error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cant  create record</shortDescription>
+        <value>Review the errors on this page</value>
+    </labels>
+    <labels>
+        <fullName>PastDateSelected</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PastDateSelected</shortDescription>
+        <value>You cannot perform any action for past days.</value>
+    </labels>
+    <labels>
+        <fullName>PleaseCheckStartDateAndEndDate</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Please Check Start Date and End Date</shortDescription>
+        <value>Please Check Start Date and End Date.</value>
+    </labels>
+    <labels>
+        <fullName>PropertyNotExistError</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>When wrong property is typed, this error occurs</shortDescription>
+        <value>Please enter valid property name</value>
+    </labels>
+    <labels>
+        <fullName>PropertySelectMessage</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>When property lookup is deselected, this message occurs</shortDescription>
+        <value>Please select property</value>
+    </labels>
+    <labels>
+        <fullName>ReservationIsPresent</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Selected Units are not available for service interruption</shortDescription>
+        <value>Selected Units are not available for service interruption.</value>
+    </labels>
+    <labels>
+        <fullName>ServiceInterruptionUnitIsNotAvailable</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Unit is not available</shortDescription>
+        <value>Selected Units are not available for service interruption.</value>
+    </labels>
+    <labels>
+        <fullName>StartDateShouldBeGreaterThanOrEqualToTodayDate</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Start Date should be greater than or equal to Today&apos;s date</shortDescription>
+        <value>Start Date should be greater than or equal to Today&apos;s Date.</value>
+    </labels>
+    <labels>
+        <fullName>StartDateShouldBeGreaterThenOrEqualToTodayDate</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Start Date should be greater then or equal to Today date</shortDescription>
+        <value>Start Date should be greater than or equal to Today&apos;s Date.</value>
+    </labels>
+    <labels>
+        <fullName>UnitIsNotAvailable</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Unit is not available</shortDescription>
+        <value>Unit is not available.</value>
+    </labels>
+    <labels>
+        <fullName>UnitTypesNotAvailable</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Unit types not available</shortDescription>
+        <value>Please select available unit types.</value>
+    </labels>
+    <labels>
+        <fullName>UnitsAndUnitTypeSelected</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Units and unit types selected</shortDescription>
+        <value>You can not select unit types and units at a time.</value>
+    </labels>
+    <labels>
+        <fullName>UnitsNotAvailable</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Units unavailability</shortDescription>
+        <value>Please select available units.</value>
+    </labels>
+    <labels>
+        <fullName>UnitsUnavailability</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Grid: Validation</shortDescription>
+        <value>Please select available units.</value>
+    </labels>
+    <labels>
+        <fullName>YouCannotModifiyReservationForPastDates</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>You Cannot modify reservation for past dates&apos;s date</shortDescription>
+        <value>You cannot modify reservation for past dates&apos;s Date.</value>
+    </labels>
+    <labels>
+        <fullName>testLabel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>test</shortDescription>
+        <value>Units are not available</value>
+    </labels>
+</CustomLabels>

@@ -207,6 +207,7 @@ export default class PropertyManagementSystem extends NavigationMixin(LightningE
                 propertyId: propertyId
             }).then(result => {
                 if (result !== undefined) { 
+                    debugger;
                     this.bookingEntities = JSON.parse(result.jsonBookingEntities);
                     this.bookingData = JSON.parse(result.jsonBookingData);
                     this.serviceInterruptionData = JSON.parse(result.jsonServiceInterruptionBookingData);                    

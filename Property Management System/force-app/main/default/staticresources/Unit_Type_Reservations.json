@@ -1,0 +1,63 @@
+{
+  "_id": "5dc3e2ebddc0e10012292e1f",
+  "objType": "model",
+  "fields": [
+    "OwnerId",
+    "IsDeleted",
+    "Name",
+    "CreatedDate",
+    "CreatedById",
+    "LastModifiedDate",
+    "LastModifiedById",
+    "SystemModstamp",
+    "LastActivityDate",
+    "epms__Cancellation_Reason__c",
+    "epms__Start_Date__c",
+    "epms__End_Date__c",
+    "epms__Description__c",
+    "epms__No_of_Children__c",
+    "epms__Other_Reason__c",
+    "epms__Reservation__c",
+    "epms__Status__c",
+    "epms__Unit_Reservation_Type_Record_ID__c",
+    "epms__Unit_Type__c",
+    "epms__Check_In_Date__c",
+    "epms__Check_Out_Date__c"
+
+  ],
+  "criteria": {
+    "conditions": [
+      {
+        "valueType": "static",
+        "fieldName": null,
+        "operator": null,
+        "value": null
+      }
+    ],
+    "evaluationCriteria": "and",
+    "evaluation": ""
+  },
+  "modelDef": "Modeldef_Unit_Type_Reservations",
+  "isWritable": true,
+  "sourceType": "dataModel",
+  "datasource": null,
+  "type": "single",
+  "label": "Unit Type Reservations",
+  "name": "Unit_Type_Reservations",
+  "owner": "5dc3e197ddc0e10012292ddf",
+  "createdBy": "5dc3e197ddc0e10012292ddf",
+  "instance": "5dc3e20dddc0e10012292e18",
+  "isDeleted": false,
+  "isTestRecord": false,
+  "createdOn": {
+    "$date": {
+      "$numberLong": "1573118699211"
+    }
+  },
+  "lastModifiedBy": "5dc3e197ddc0e10012292ddf",
+  "lastModifiedOn": {
+    "$date": {
+      "$numberLong": "1573119353571"
+    }
+  }
+}

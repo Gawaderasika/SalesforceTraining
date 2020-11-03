@@ -1,0 +1,56 @@
+{
+  "_id": "5dc3e2c0ddc0e10012292e1e",
+  "label": "Modeldef Service Interruption",
+  "name": "Modeldef_Service_Interruptions",
+  "type": "online",
+  "datasource": "Manage_Package",
+  "object": "epms__Service_Interruption__c",
+  "fields": [
+    "OwnerId",
+    "IsDeleted",
+    "Name",
+    "CreatedDate",
+    "CreatedById",
+    "LastModifiedDate",
+    "LastModifiedById",
+    "SystemModstamp",
+    "LastActivityDate",
+    "epms__Start_Date__c",
+    "epms__End_Date__c",
+    "epms__Interruption_Reason__c",
+    "epms__Unit__c",
+    "epms__Cancellation_Reason__c",
+    "epms__Description__c",
+    "epms__Action__c"
+  ],
+  "isWritable": true,
+  "criteria": {
+    "conditions": [
+      {
+        "fieldName": null,
+        "operator": null,
+        "valueType": null,
+        "value": null
+      }
+    ],
+    "evaluationCriteria": "and",
+    "evaluation": ""
+  },
+  "objType": "modelDef",
+  "owner": "5dc3e197ddc0e10012292ddf",
+  "createdBy": "5dc3e197ddc0e10012292ddf",
+  "instance": "5dc3e20dddc0e10012292e18",
+  "isDeleted": false,
+  "isTestRecord": false,
+  "createdOn": {
+    "$date": {
+      "$numberLong": "1573118656013"
+    }
+  },
+  "lastModifiedBy": "5dc3e197ddc0e10012292ddf",
+  "lastModifiedOn": {
+    "$date": {
+      "$numberLong": "1573118656013"
+    }
+  }
+}

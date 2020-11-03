@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Property Management System</label>
+    <navType>Standard</navType>
+    <tabs>PMS</tabs>
+    <tabs>Property__c</tabs>
+    <tabs>Unit_Type__c</tabs>
+    <tabs>Unit__c</tabs>
+    <tabs>Reservation__c</tabs>
+    <tabs>Unit_Type_Reservation__c</tabs>
+    <tabs>Assignment__c</tabs>
+    <tabs>Service_Interruption__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Property_Management_System_UtilityBar</utilityBar>
+</CustomApplication>

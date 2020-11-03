@@ -1,0 +1,253 @@
+{
+  "_id": "5e20548094cf34001133bbfa",
+  "label": "Update Interruption",
+  "name": "Update_Interruption",
+  "objType": "layout",
+  "owner": "5e1ff0e444f12f001107a8a8",
+  "createdBy": "5e1ff0e444f12f001107a8a8",
+  "instance": "5e1ff19cf9cb010011693869",
+  "isDeleted": false,
+  "isTestRecord": false,
+  "createdOn": {
+    "$date": {
+      "$numberLong": "1579177088078"
+    }
+  },
+  "lastModifiedBy": "5e1ff0e444f12f001107a8a8",
+  "lastModifiedOn": {
+    "$date": {
+      "$numberLong": "1579177564947"
+    }
+  },
+  "actions": [
+    {
+      "workProcess": "Save",
+      "name": "Save",
+      "label": "Save",
+      "type": "workProcess",
+      "_id": "5e2055e490fcb000114cad8e"
+    },
+    {
+      "workProcess": "Close_Modal",
+      "name": "Close_Modal",
+      "label": "Close Modal",
+      "type": "workProcess",
+      "_id": "5e2055e490fcb000114cad8f"
+    },
+    {
+      "name": "Cancel",
+      "label": "Cancel",
+      "type": "popModal",
+      "_id": "5e2055e490fcb000114cad90"
+    }
+  ],
+  "layout": {
+    "footerView": {
+      "childs": [
+        {
+          "id": "footerView-arw1",
+          "type": "button",
+          "label": "Cancel",
+          "translations": {},
+          "childs": [],
+          "disabled": false,
+          "validation": [],
+          "visibility": {
+            "criteria": {
+              "conditions": [{}],
+              "evaluationCriteria": "and"
+            }
+          },
+          "onclick": {
+            "action": "Cancel",
+            "type": "popModal"
+          },
+          "_id": "5e2055e490fcb000114cad86"
+        },
+        {
+          "id": "footerView-nxjf",
+          "type": "button",
+          "label": "Update",
+          "translations": {},
+          "childs": [],
+          "buttonType": "primary",
+          "disabled": false,
+          "validation": [],
+          "visibility": {
+            "criteria": {
+              "conditions": [{}],
+              "evaluationCriteria": "and"
+            }
+          },
+          "onclick": {
+            "action": "Save",
+            "type": "workProcess"
+          },
+          "_id": "5e2055e490fcb000114cad87"
+        }
+      ]
+    },
+    "contentView": {
+      "childs": [
+        {
+          "id": "contentView-fkmk",
+          "type": "section",
+          "label": "Service Interruption Details",
+          "translations": {},
+          "childs": [
+            {
+              "id": "contentView-fkmk-t8r8",
+              "type": "form",
+              "label": "new form",
+              "fields": [
+                {
+                  "model": "Service_Interruptions",
+                  "label": "Start Date",
+                  "path": "epms__Start_Date__c",
+                  "name": "epms__Start_Date__c",
+                  "type": "date",
+                  "id": "contentView-fkmk-t8r8-160z",
+                  "_id": "5e2055e490fcb000114cad8a"
+                },
+                {
+                  "model": "Service_Interruptions",
+                  "label": "End Date",
+                  "path": "epms__End_Date__c",
+                  "name": "epms__End_Date__c",
+                  "type": "date",
+                  "id": "contentView-fkmk-t8r8-mk5w",
+                  "_id": "5e2055e490fcb000114cad8b"
+                },
+                {
+                  "model": "Service_Interruptions",
+                  "label": "Unit",
+                  "path": "epms__Unit__c",
+                  "name": "epms__Unit__c",
+                  "type": "reference",
+                  "reference": "Service_Interruptions",
+                  "referenceField": "epms__Property__c",
+                  "id": "contentView-fkmk-t8r8-yupb",
+                  "_id": "5e2055e490fcb000114cad8c"
+                },
+                {
+                  "model": "Service_Interruptions",
+                  "label": "Reason",
+                  "path": "epms__Interruption_Reason__c",
+                  "name": "epms__Interruption_Reason__c",
+                  "type": "text",
+                  "id": "contentView-fkmk-t8r8-5v3v",
+                  "_id": "5e2055e490fcb000114cad8d"
+                },
+                {
+                  "model": "Service_Interruptions",
+                  "label": "Other Reason",
+                  "path": "epms__Other_Reason__c",
+                  "name": "epms__Other_Reason__c",
+                  "type": "textarea",
+                  "id": "contentView-rju8-xmdb-vu16",
+                  "required": false,
+                  "hideLabel": false,
+                  "disabled": false,
+                  "readOnly": false,
+                  "validation": [],
+                  "visibility": {
+                    "criteria": {
+                      "conditions": [
+                        {
+                          "source": "model.Service_Interruptions.epms__Interruption_Reason__c",
+                          "operator": "equals",
+                          "destination": "static.Other",
+                          "_id": "5e203a55f130eb0011132e52"
+                        }
+                      ],
+                      "evaluationCriteria": "and"
+                    },
+                    "visibilityAction": "hide"
+                  },
+                  "onload": {},
+                  "onchange": {},
+                  "onblur": {},
+                  "onfocus": {},
+                  "modelType": "dataModel",
+                  "_id": "5e203a55f130eb0011132e51"
+                }
+              ],
+              "model": "Service_Interruptions",
+              "isVisibility": true,
+              "largeSize": {
+                "$numberInt": "6"
+              },
+              "validation": [],
+              "visibility": {
+                "criteria": {
+                  "conditions": [{}],
+                  "evaluationCriteria": "and"
+                }
+              },
+              "onload": {},
+              "modelType": "dataModel",
+              "_id": "5e2055e490fcb000114cad89"
+            }
+          ],
+          "validation": [],
+          "visibility": {
+            "criteria": {
+              "conditions": [{}],
+              "evaluationCriteria": "and"
+            }
+          },
+          "headeraction": [],
+          "model": "Service_Interruptions",
+          "modelType": "dataModel",
+          "_id": "5e2055e490fcb000114cad88"
+        }
+      ]
+    },
+    "type": "modal",
+    "styles": ""
+  },
+  "models": ["Service_Interruptions"],
+  "tags": [],
+  "validationRules": [],
+  "workProcesses": [
+    {
+      "name": "Close_Modal",
+      "label": "Close Modal",
+      "actions": [
+        {
+          "type": "successMessage",
+          "message": "Record saved",
+          "_id": "5e2055e490fcb000114cad92"
+        }
+      ],
+      "onSuccess": {
+        "type": "popModal"
+      },
+      "onError": {
+        "type": "errorMessage",
+        "message": "Error while saving record"
+      },
+      "_id": "5e2055e490fcb000114cad91"
+    },
+    {
+      "name": "Save",
+      "label": "Save",
+      "actions": [
+        {
+          "type": "save",
+          "model": "Service_Interruptions",
+          "_id": "5e2055e490fcb000114cad94"
+        }
+      ],
+      "onSuccess": {
+        "type": "workProcess",
+        "workProcess": "Close_Modal"
+      },
+      "onError": {
+        "type": "errorMessage",
+        "message": "Error while saving record"
+      },
+      "_id": "5e2055e490fcb000114cad93"
+    }
+  ]
+}

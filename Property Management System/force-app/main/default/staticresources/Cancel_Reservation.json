@@ -1,0 +1,241 @@
+{
+  "_id": "5e2037215fe41900117b9d81",
+  "label": "Cancel Reservations",
+  "name": "Cancel_Reservations",
+  "objType": "layout",
+  "owner": "5e1ff0e444f12f001107a8a8",
+  "createdBy": "5e1ff0e444f12f001107a8a8",
+  "instance": "5e1ff19cf9cb010011693869",
+  "isDeleted": false,
+  "isTestRecord": false,
+  "createdOn": {
+    "$date": {
+      "$numberLong": "1579169569491"
+    }
+  },
+  "lastModifiedBy": "5e1ff0e444f12f001107a8a8",
+  "lastModifiedOn": {
+    "$date": {
+      "$numberLong": "1579170389985"
+    }
+  },
+  "actions": [
+    {
+      "name": "Close",
+      "label": "Close",
+      "type": "popModal",
+      "_id": "5e203a55f130eb0011132e4b"
+    },
+    {
+      "workProcess": "closeModal",
+      "name": "closeModal",
+      "label": "closeModal",
+      "type": "workProcess",
+      "_id": "5e203a55f130eb0011132e4c"
+    },
+    {
+      "workProcess": "Save",
+      "name": "Save",
+      "label": "Save",
+      "type": "workProcess",
+      "_id": "5e203a55f130eb0011132e4d"
+    }
+  ],
+  "layout": {
+    "footerView": {
+      "childs": [
+        {
+          "id": "footerView-w1dw",
+          "type": "button",
+          "label": "Cancel",
+          "translations": {},
+          "childs": [],
+          "disabled": false,
+          "validation": [],
+          "visibility": {
+            "criteria": {
+              "conditions": [{}],
+              "evaluationCriteria": "and"
+            }
+          },
+          "onclick": {
+            "action": "Close",
+            "type": "popModal"
+          },
+          "model": "Reservations",
+          "modelType": "dataModel",
+          "_id": "5e203a55f130eb0011132e4e"
+        },
+        {
+          "id": "footerView-3v1u",
+          "type": "button",
+          "label": "Save",
+          "translations": {},
+          "childs": [],
+          "buttonType": "primary",
+          "disabled": false,
+          "validation": [],
+          "visibility": {
+            "criteria": {
+              "conditions": [{}],
+              "evaluationCriteria": "and"
+            }
+          },
+          "onclick": {
+            "action": "Save",
+            "type": "workProcess"
+          },
+          "model": "Reservations",
+          "modelType": "dataModel",
+          "_id": "5e203a55f130eb0011132e4f"
+        }
+      ]
+    },
+    "contentView": {
+      "childs": [
+        {
+          "id": "contentView-rju8",
+          "type": "section",
+          "label": "Cancel Reservation",
+          "translations": {},
+          "childs": [
+            {
+              "id": "contentView-rju8-xmdb",
+              "type": "form",
+              "label": "new form",
+              "fields": [
+                {
+                  "model": "Reservations",
+                  "label": "Cancellation Reason",
+                  "path": "epms__Cancellation_Reason__c",
+                  "name": "epms__Cancellation_Reason__c",
+                  "type": "select",
+                  "id": "contentView-rju8-xmdb-6q7e",
+                  "required": true,
+                  "hideLabel": false,
+                  "disabled": false,
+                  "readOnly": false,
+                  "validation": [],
+                  "visibility": {
+                    "criteria": {
+                      "conditions": [{}],
+                      "evaluationCriteria": "and"
+                    }
+                  },
+                  "onload": {},
+                  "onchange": {},
+                  "onblur": {},
+                  "onfocus": {},
+                  "modelType": "dataModel",
+                  "_id": "5e203a55f130eb0011132e50"
+                },
+                {
+                  "model": "Reservations",
+                  "label": "Other Reason",
+                  "path": "epms__Other_Reason__c",
+                  "name": "epms__Other_Reason__c",
+                  "type": "LongTextArea",
+                  "id": "contentView-rju8-xmdb-vu16",
+                  "required": false,
+                  "hideLabel": false,
+                  "disabled": false,
+                  "readOnly": false,
+                  "validation": [],
+                  "visibility": {
+                    "criteria": {
+                      "conditions": [
+                        {
+                          "source": "model.Reservations.epms__Cancellation_Reason__c",
+                          "operator": "equals",
+                          "destination": "static.Other",
+                          "_id": "5e203a55f130eb0011132e52"
+                        }
+                      ],
+                      "evaluationCriteria": "and"
+                    },
+                    "visibilityAction": "hide"
+                  },
+                  "onload": {},
+                  "onchange": {},
+                  "onblur": {},
+                  "onfocus": {},
+                  "modelType": "dataModel",
+                  "_id": "5e203a55f130eb0011132e51"
+                }
+              ],
+              "model": "Reservations",
+              "isVisibility": true,
+              "_id": "5e2037d8d4b07500110c15a1",
+              "validation": [],
+              "visibility": {
+                "criteria": {
+                  "conditions": [{}],
+                  "evaluationCriteria": "and"
+                }
+              },
+              "onload": {},
+              "modelType": "dataModel"
+            }
+          ],
+          "validation": [],
+          "visibility": {
+            "criteria": {
+              "conditions": [{}],
+              "evaluationCriteria": "and"
+            }
+          },
+          "headeraction": [],
+          "model": "Reservations",
+          "modelType": "dataModel",
+          "_id": "5e2037d8d4b07500110c15a0"
+        }
+      ]
+    },
+    "type": "modal",
+    "styles": ""
+  },
+  "models": ["Reservations"],
+  "tags": [],
+  "validationRules": [],
+  "workProcesses": [
+    {
+      "name": "closeModal",
+      "label": "close Modal",
+      "actions": [
+        {
+          "type": "successMessage",
+          "message": "Reservation cancelled successfully ",
+          "_id": "5e203a55f130eb0011132e54"
+        }
+      ],
+      "onSuccess": {
+        "type": "popModal"
+      },
+      "onError": {
+        "type": "errorMessage",
+        "message": "Error while saving record"
+      },
+      "_id": "5e203a55f130eb0011132e53"
+    },
+    {
+      "name": "Save",
+      "label": "Save",
+      "actions": [
+        {
+          "type": "save",
+          "model": "Reservations",
+          "_id": "5e203a55f130eb0011132e56"
+        }
+      ],
+      "onSuccess": {
+        "type": "workProcess",
+        "workProcess": "closeModal"
+      },
+      "onError": {
+        "type": "errorMessage",
+        "message": "Error while saving record"
+      },
+      "_id": "5e203a55f130eb0011132e55"
+    }
+  ]
+}

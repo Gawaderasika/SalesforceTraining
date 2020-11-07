@@ -1,0 +1,8 @@
+input[type="date"]::-webkit-inner-spin-button{
+    display: none;
+    -webkit-appearance: none;
+}
+.slds-spinner_container{
+    top: 80px;
+    bottom: -160px;
+}

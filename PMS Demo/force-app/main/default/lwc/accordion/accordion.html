@@ -1,0 +1,8 @@
+<template>                  
+    <lightning-accordion title={title} 
+                         active-section-name={activeSectionName}
+                         onsectiontoggle={handleSectionToggle}
+                         allow-multiple-sections-open={openMultipleSections}>                                                                       
+                         <slot></slot>                                                         
+    </lightning-accordion>         
+</template>

@@ -1,0 +1,47 @@
+<apex:page >
+    <style type="text/css">
+
+        .myClass {
+        margin-top:200px;
+        float:center;
+        margin-left:150px;
+        margin-right:150px;
+        }
+
+        .messageText{
+        padding: 4px;
+        font-size: initial;
+        margin-left:150px;
+        }
+        .message {
+
+        border-style: initial;
+        }
+        body input.btn, body input.btnDisabled, body input.btnCancel {
+
+        margin-left: 611px;
+        border: -133px solid #b5b5b5;
+        padding: 9px 6px;
+        }
+
+        .message{
+        margin-right:130px;
+        margin-left: 131px;
+        }
+
+    </style>
+    <apex:form styleClass="myClass">
+
+        <apex:pageMessage summary="Please go to Setup -> Apex Settings and check the checkbox of 'Deploy Metadata from Non-Certified Package Versions via Apex', then navigate to booking grid tab to proceed further."
+                          strength="3"
+                          severity="INFO" >
+            <apex:commandButton value="Go to Apex Settings" onclick="getURL();"/>
+        </apex:pageMessage>
+        <b html-align="right"></b>
+    </apex:form>
+    <script>
+    function getURL() {
+        window.open(window.location.origin + '/lightning/setup/ApexSettings/home');
+    }
+    </script>
+</apex:page>

@@ -1,0 +1,49 @@
+<template>
+    <div onclick={closeOpenedMenu}>
+    <!--This is the header section on PMS-->
+    <c-page-header>
+        <div class="slds-text-color_error slds-align_absolute-center slds-m-right--x-small" style="margin-top: 22px;">
+            <span if:true={showValidPropertyError} >{propertyNotExistError}</span>
+            <span if:true={propertySelectionRequest} >{propertySelectMessage}</span>
+        </div>
+       <c-lookup if:true={showLookup}  label={label} show-label={showLabel}  placeholder={placeholder} id="lookupWrapperId"
+            debounce-delay={debounceDelay} minimum-character-to-search={minimumCharacterToSearch} selected-record-name={selectedRecordName}
+            onsearch={handleSearch} onclick={handleSearchOnClick} dropdown-height={dropdownHeight} lookup-data={lookupPropertyData}
+            object-api-name={objectApiName} field-api-name={fieldApiName} record-limit={recordLimit}
+            onselectionchange={handleSelectionChange} is-disabled={disabled} is-required={required}
+            filter-condition={filterCondition} create-record={createRecord} onsearchvalue={handleSearchvalue}>
+        </c-lookup>
+
+        <div class="slds-align-bottom slds-m-left--xx-small">
+            <lightning-button-icon icon-name="utility:refresh" disabled={disabledCondition}  alternative-text="Refresh" onclick={handlerefresh}></lightning-button-icon>
+         </div>
+        <div class="slds-align-bottom slds-m-left--xx-small">
+            <lightning-button-icon icon-name="utility:help"  alternative-text="Help" onclick={handleHelp}></lightning-button-icon>    
+        </div>
+            
+    </c-page-header>
+
+    <!--This is used to render booking grid -->
+    <c-booking-grid if:true={showGrid} is-spinner={isSpinner}  booking-entities={bookingEntities} booking-data={bookingData} service-interruption-data={serviceInterruptionData}
+        onexistingbookingclicked={handleExistingBookingClicked} onunitclicked={handleMarkDirty} onexistinginterruptionclicked={handleExistingInterruptionClicked} onselectioncomplete={handleSelectionComplete} onentitybookingclicked={handleEntitybookingclicked}>
+    </c-booking-grid>
+
+    <!--This model is used to show layout -->
+    <!-- <c-pwr-modal is-open-modal={isOpenModal} onmodalclose={handleModalClose}  > -->
+        <div if:true={isOpenModal}  onmodalclose={handleModalClose} style="word-wrap: break-word">
+            <c-layout-viewer layout-name={layoutName} records={selectedRecord} unit-count={unitCount}></c-layout-viewer> 
+        </div>
+    <!-- </c-pwr-modal> -->
+
+    <!--This model is used to show table for Unit Type Reservation-->
+    <c-modal is-open-modal={isOpenModalForBokingTable} onmodalclose={handleModalClose}>
+        <c-datatable if:true={showBokingTable} hide-checkbox-column={hideCheckboxColumn} columns={columns} records={records} row-action={tableAction} onrowaction={handleRowAction}>
+        </c-datatable>
+    </c-modal>
+
+    <!--This is the menu component for PMS-->
+    <div if:true={showPwrMenu} style={menuPosition}>   
+        <c-menu client-x={clientX} client-y={clientY} menu-item={menuItem}  onitemselected={handleMenuAction}></c-menu>
+    </div>
+</div> 
+</template>

@@ -180,6 +180,7 @@ export default class PropertyManagementSystem extends NavigationMixin(LightningE
     @track showLookup = false;
 
     connectedCallback() {
+        debugger;
         this.getNamespace();
         this.objectApiName = UNIT_TYPE_OBJECT.objectApiName;
         this.fieldApiName = PROPERTY_FIELD.fieldApiName;
@@ -207,7 +208,6 @@ export default class PropertyManagementSystem extends NavigationMixin(LightningE
                 propertyId: propertyId
             }).then(result => {
                 if (result !== undefined) { 
-                    debugger;
                     this.bookingEntities = JSON.parse(result.jsonBookingEntities);
                     this.bookingData = JSON.parse(result.jsonBookingData);
                     this.serviceInterruptionData = JSON.parse(result.jsonServiceInterruptionBookingData);                    

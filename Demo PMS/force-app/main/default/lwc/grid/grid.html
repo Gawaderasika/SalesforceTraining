@@ -47,7 +47,7 @@
                                         scope="col"
                                         style="min-width: 500px;"
                                         key={date.value.key}>
-                                        <div class="slds-cell-fixed" style={_columnDatesWidth} >
+                                        <div class="slds-cell-fixed" >
                                             <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate slds-align_absolute-center bookingCell ">
                                                 <span class="slds-truncate"
                                                     title="">
@@ -83,9 +83,7 @@
 
 
                                     <td class="slds-tree__item parent cursor-type"
-                                        data-label=""
-                                        
-                                        >
+                                        data-label="">
                                 
                                         <template if:true={bookingEntity.ischild}>
                                             <button class="slds-button slds-button_icon slds-button_icon-x-small slds-m-right_x-small"
@@ -118,7 +116,6 @@
                                             for:item="cell">
                                         <td data-id={cell.data_id}
                                             class="bookingCell div-border no-select-link"
-                                            style={columnWidth}
                                             key={cell.data_id}
                                             lwc:dom="manual">
 
@@ -179,67 +176,20 @@
                                         <template for:each={bookingEntity_child.columns}
                                                 for:item="cell">
                                             <td data-id={cell.data_id}
-                                                style={columnWidth}
                                                 class="bookingCell"
                                                 key={cell.data_id}
                                                 lwc:dom="manual">
                                             </td>
                                         </template>
                                     </tr>
-
-                                    <template if:true={bookingEntity_child.children}
-                                            for:each={bookingEntity_child.children}
-                                            for:item="bookingEntity_child_subchild">
-                                        <!-- Subchild tr -->
-                                        <tr aria-level={bookingEntity_child_subchild.level}
-                                            data-id={bookingEntity_child_subchild.data_id}
-                                            data-row-key-value={bookingEntity_child_subchild.datarowkeyvalue}
-                                            aria-posinset={bookingEntity_child_subchild.posinset}
-                                            aria-selected="false"
-                                            aria-setsize={bookingEntity_child_subchild.setsize}
-                                            class="slds-hint-parent"
-                                            key={bookingEntity_child_subchild.id}>
-
-                                            <td class="slds-tree__item"
-                                                data-label="">
-
-                                                <template if:false={bookingEntity_child_subchild.ischild}>
-                                                    <button class="slds-button slds-button_icon slds-button_icon-x-small slds-m-right_x-small slds-is-disabled"
-                                                            aria-hidden="true"
-                                                            tabindex="-1"
-                                                            title="">
-                                                        <span class="slds-button__icon slds-button__icon_small"> > </span>
-                                                    </button>
-                                                </template>
-
-                                                <div class="slds-truncate"
-                                                    title={bookingEntity_child_subchild.label} >
-                                                    {bookingEntity_child_subchild.label}
-                                                </div>
-                                            </td>
-
-                                            <template for:each={bookingEntity_child_subchild.columns}
-                                                    for:item="cell">
-                                                <td data-id={cell.data_id}
-                                                    style={columnWidth}
-                                                    class="bookingCell"
-                                                    key={cell.data_id}
-                                                    lwc:dom="manual">
-                                                </td>
-                                            </template>
-                                        </tr>
-                                    </template>
                                 </template>
                             </template>
                         </tbody>
                     </table>
-                 
                     <div if:true={noRecordFound} class="slds-text-heading_medium slds-align_absolute-center slds-text-color_error fontFix">No Record Found</div> 
                 </div>
-                
             </div>
-              
         </div>
-        <div class="selectmulticell"  if:true={_isDivVisible} style={_divSize} ></div>
+        <div class="selectmulticell"  if:true={_isDivVisible}></div>
     </div>
 </template>

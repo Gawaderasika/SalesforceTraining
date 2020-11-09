@@ -38,7 +38,7 @@ const dayNames = [
 ];
 
 
-export default class Grid extends LightningElement {
+export default class BookingGrid extends LightningElement {
 
     div = 0;
     x1 = 0;
@@ -57,7 +57,7 @@ export default class Grid extends LightningElement {
     @track selectedCellUnitType = [];
     @track selectedCellUniySubType = [];
     isExistingBookingClicked = false;
-    @track _isDivVisible = false;
+    @track _isDivVisible = true;
     @track _divSize = 'left: 0px; right: 0px; width: 0px; height: 0px;';
     @track _columnDatesWidth = 'width: 0px;'
     @track _columnWidth;
@@ -189,27 +189,6 @@ export default class Grid extends LightningElement {
             this.setDefaultGridTemplate();
         }*/
     }
-
-  /*  setDefaultGridTemplate() {
-        let firstCol = this.template.querySelectorAll("[data-id=date_0]");
-        this.setColumnWidth(firstCol);
-        let columnDates = this._columnDates;
-        let template = this.template;
-        Object.values(this._mapBookingEntityIdRecord).forEach(function (bookingEntity) {
-            columnDates.forEach((date, iCol) => {
-                let totalCount = bookingEntity.total;
-                if (totalCount === '')
-                    return;
-                let cell = template.querySelector(`[data-id="cell_${bookingEntity.id}_${iCol}"]`);
-                let divdata = ` <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate slds-align_absolute-center bookingCell ">${totalCount}</div>`;
-                /*let totalAvailable = totalCount - bookingEntity.booked[iCol];
-                    if (bookingEntity.booked[iCol] === 0) {
-                    divdata = ` <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate slds-align_absolute-center bookingCell"><a data-id="${bookingEntity.id}" class="entitybooking">${totalAvailable}</a></div>`;
-                    cell.innerHTML = divdata;
-                }
-            });
-        });
-    }*/
 
     setColumnWidth(column) {
         if(column.length > 0) {

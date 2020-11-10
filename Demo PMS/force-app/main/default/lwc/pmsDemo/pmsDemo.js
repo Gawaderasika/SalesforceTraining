@@ -5,27 +5,19 @@ import getSearchResult from '@salesforce/apex/LookupDataManager.getSearchResult'
 import getObjectNameFromId from '@salesforce/apex/Engine.getObjectNameFromId';
 import getBookingGridData from '@salesforce/apex/PropertyManagementSystemController.getBookingGridData';
 import getAssignment from '@salesforce/apex/PropertyManagementSystemController.getAssignment';
-import getServiceInterruptions from '@salesforce/apex/PropertyManagementSystemController.getServiceInterruptions';
-import getCheckInCheckOutInformation from '@salesforce/apex/PropertyManagementSystemController.getCheckInCheckOutInformation';
 import getOrganizationNamespace from '@salesforce/apex/PropertyManagementSystemController.getOrganizationNamespace';
 import UNIT_TYPE_OBJECT from '@salesforce/schema/Unit_Type__c';
 import PROPERTY_FIELD from '@salesforce/schema/Unit_Type__c.Property__c';
 import { NavigationMixin } from 'lightning/navigation';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
-import PastDateSelected from '@salesforce/label/c.PastDateSelected';
 import getUnitRecord from '@salesforce/apex/PropertyManagementSystemController.getUnitRecord';
 import { updateRecord, getRecord, getFieldValue } from 'lightning/uiRecordApi';
-import DIRTY_FIELD from '@salesforce/schema/Unit__c.Dirty__c';
 import ID_FIELD from '@salesforce/schema/Unit__c.Id';
 import Help_user_manual from '@salesforce/label/c.Help_user_manual';
-import Checked_Out_Edit_Error from '@salesforce/label/c.Checked_Out_Edit_Error';
 import PropertyNotExistError from '@salesforce/label/c.PropertyNotExistError';
 import PropertySelectMessage from '@salesforce/label/c.PropertySelectMessage';
-import Checked_Out_Cancel_Error from '@salesforce/label/c.Checked_Out_Cancel_Error';
-import Checked_Out_CheckIn_Error from '@salesforce/label/c.Checked_Out_CheckIn_Error';
 import Cancelled_Cancel_Error from '@salesforce/label/c.Cancelled_Cancel_Error';
 import { CurrentPageReference } from 'lightning/navigation';
-import getReservationOnfo from '@salesforce/apex/PropertyManagementSystemController.getReservationOnfo';
 
 
 const menuForNewBooking = [{
@@ -87,7 +79,7 @@ const menuForServiceInterruption = [
     }
 ];
 
-export default class PropertyManagementSystem extends NavigationMixin(LightningElement) {
+export default class pmsDemo extends NavigationMixin(LightningElement) {
 
     unitTypeReservationId;
     selUnitId;
@@ -117,7 +109,7 @@ export default class PropertyManagementSystem extends NavigationMixin(LightningE
     @track bookingEntities;
     @track bookingData;
     @track serviceInterruptionData;
-    @track showGrid = false;
+    @track showGrid = true;
     @track logoIcon;
     @track isSpinner;
     @track isOpenModal;

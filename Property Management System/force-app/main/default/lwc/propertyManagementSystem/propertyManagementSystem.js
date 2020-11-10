@@ -117,7 +117,8 @@ export default class PropertyManagementSystem extends NavigationMixin(LightningE
     @track bookingEntities;
     @track bookingData;
     @track serviceInterruptionData;
-    @track showGrid = false;
+    //change - 1
+    @track showGrid = true;
     @track logoIcon;
     @track isSpinner;
     @track isOpenModal;

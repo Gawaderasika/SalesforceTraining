@@ -1,9 +1,0 @@
-.item-padding {
-    display: inline;
-    padding-left: 6px;
-}
-
-.disabled {
-    pointer-events:none; 
-    opacity:0.6;        
-}

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>State__c</fullName>
+    <externalId>false</externalId>
+    <label>State</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Country__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Victoria</fullName>
+                <default>false</default>
+                <label>Victoria</label>
+            </value>
+            <value>
+                <fullName>Western Australia</fullName>
+                <default>false</default>
+                <label>Western Australia</label>
+            </value>
+            <value>
+                <fullName>Christmas Island</fullName>
+                <default>false</default>
+                <label>Christmas Island</label>
+            </value>
+            <value>
+                <fullName>Maharashtra</fullName>
+                <default>false</default>
+                <label>Maharashtra</label>
+            </value>
+            <value>
+                <fullName>Gujrat</fullName>
+                <default>false</default>
+                <label>Gujrat</label>
+            </value>
+            <value>
+                <fullName>Madhyapradesh</fullName>
+                <default>false</default>
+                <label>Madhyapradesh</label>
+            </value>
+            <value>
+                <fullName>Alaska</fullName>
+                <default>false</default>
+                <label>Alaska</label>
+            </value>
+            <value>
+                <fullName>Alabama</fullName>
+                <default>false</default>
+                <label>Alabama</label>
+            </value>
+            <value>
+                <fullName>Michigan</fullName>
+                <default>false</default>
+                <label>Michigan</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <valueName>Victoria</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <valueName>Western Australia</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <valueName>Christmas Island</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>India</controllingFieldValue>
+            <valueName>Maharashtra</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>India</controllingFieldValue>
+            <valueName>Gujrat</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>India</controllingFieldValue>
+            <valueName>Madhyapradesh</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>United States</controllingFieldValue>
+            <valueName>Alaska</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>United States</controllingFieldValue>
+            <valueName>Alabama</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>United States</controllingFieldValue>
+            <valueName>Michigan</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,32 @@
+<apex:component >
+    
+    <!-- Details of job -->
+    <apex:attribute name="jobRecords" type="string[]" required="true" description=""/>
+    <apex:attribute name="job" type="Job_Rasika__c[]" required="true" description=""/>
+    <table border="1" >
+        <tr>
+        	<th>Name</th>
+            <th>Description</th>
+            <th>No_of_positions</th>
+            <th>Required_Skills</th>
+            <th>Certification_Required</th>
+            <th>Qualifications_Required</th>
+            <th>Active</th>
+            <th>Candidates</th>
+        </tr>
+        <apex:repeat var="item1" value="{!job}">
+            <tr>
+                <td>{!item1.Name}</td>
+                <td>{!item1.Description__c}</td>
+                <td>{!item1.Number_of_Positions__c}</td>
+                <td>{!item1.Required_Skills__c}</td>
+                <td>{!item1.Certification_Required__c}</td>
+                <td>{!item1.Qualifications_Required__c}</td>
+                <td>{!item1.Active__c}</td>
+                <td><button value="click">Open</button></td>
+  			</tr>
+        </apex:repeat>
+             
+    </table>
+	
+</apex:component>

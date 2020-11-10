@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Certification_Required__c</fullName>
+    <externalId>false</externalId>
+    <label>Certification Required</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>PMP (Project Management Professional)</fullName>
+                <default>false</default>
+                <label>PMP (Project Management Professional)</label>
+            </value>
+            <value>
+                <fullName>CMP (Certified Project Manager)</fullName>
+                <default>false</default>
+                <label>CMP (Certified Project Manager)</label>
+            </value>
+            <value>
+                <fullName>MPM (Master Project Manager)</fullName>
+                <default>false</default>
+                <label>MPM (Master Project Manager)</label>
+            </value>
+            <value>
+                <fullName>Sun Certified</fullName>
+                <default>false</default>
+                <label>Sun Certified</label>
+            </value>
+            <value>
+                <fullName>SAS</fullName>
+                <default>false</default>
+                <label>SAS</label>
+            </value>
+            <value>
+                <fullName>ORACLE</fullName>
+                <default>false</default>
+                <label>ORACLE</label>
+            </value>
+            <value>
+                <fullName>Sybase</fullName>
+                <default>false</default>
+                <label>Sybase</label>
+            </value>
+            <value>
+                <fullName>Microsoft</fullName>
+                <default>false</default>
+                <label>Microsoft</label>
+            </value>
+            <value>
+                <fullName>CISCO</fullName>
+                <default>false</default>
+                <label>CISCO</label>
+            </value>
+            <value>
+                <fullName>RedHat</fullName>
+                <default>false</default>
+                <label>RedHat</label>
+            </value>
+            <value>
+                <fullName>IBM</fullName>
+                <default>false</default>
+                <label>IBM</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

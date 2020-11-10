@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Job_Rasika</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Jobs_Rasika</value>
+    </caseValues>
+    <recordTypes>
+        <label><!-- Admin --></label>
+        <name>Admin</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Developer --></label>
+        <name>Developer</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Manager --></label>
+        <name>Manager</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Button1 --></label>
+        <name>Button1</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Link1 --></label>
+        <name>Link1</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- List1 --></label>
+        <name>List1</name>
+    </webLinks>
+</CustomObjectTranslation>

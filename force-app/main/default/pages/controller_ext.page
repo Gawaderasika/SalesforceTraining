@@ -1,0 +1,4 @@
+<apex:page Controller="ExtensionOne" extensions="ExtensionTwo">
+    {!greeting} <p/>
+    {!greeting1} <p/>
+</apex:page>

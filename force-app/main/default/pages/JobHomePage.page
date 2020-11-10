@@ -1,0 +1,13 @@
+<apex:page controller="JobOpenPage">
+    <apex:form >
+    	<apex:pageBlock title="Placement">
+        <apex:pageBlockSection title="Select Job">
+            <apex:selectList value="{!selectJob}" multiselect="false" size="1">
+                <apex:selectOptions value="{!JobsOptions}"/>
+            </apex:selectList>
+            <apex:outputText value="{!Open}" label="You have selected:"/>
+        </apex:pageBlockSection>
+      </apex:pageBlock>
+      <apex:commandButton value="Save" action="{!save}"/>
+    </apex:form>
+</apex:page>

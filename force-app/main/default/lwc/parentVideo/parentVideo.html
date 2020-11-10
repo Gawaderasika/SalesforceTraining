@@ -1,0 +1,17 @@
+<template>
+    <!--Parent to child-->
+    <lightning-card title="Parent component">
+        <c-child-video my-name={parentValue}></c-child-video>
+        <div>
+            <lightning-button label="Change value" onclick={handleChange}></lightning-button>
+        </div>
+        <div>
+            <lightning-button label="Call child mehod" onclick={handleCall}></lightning-button>
+        </div>
+    </lightning-card>
+    
+    <!--Child to aprent-->
+    <lightning-card title="Parent Component">
+        <c-child-video onbuttonclick={handleEvent} my-name={parentValue}></c-child-video>
+    </lightning-card>
+</template>

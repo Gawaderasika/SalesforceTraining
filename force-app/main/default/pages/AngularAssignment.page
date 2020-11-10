@@ -1,0 +1,42 @@
+<apex:page controller="AngularAssignmentController" sidebar="false" showHeader="false">
+<html>
+    <head>        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    	<apex:includeScript value="{!URLFOR($Resource.angularMin)}"/>
+    	<apex:includeScript value="{!URLFOR($Resource.jqueryMin)}"/>
+    	<apex:stylesheet value="{!URLFOR($Resource.MyListCSS)}"/>
+    	<apex:includeScript value="{!URLFOR($Resource.myAppJS)}"/>
+    	<apex:includeScript value="{!URLFOR($Resource.myFactoryJS)}"/>
+    	<apex:includeScript value="{!URLFOR($Resource.MyJsJS)}"/>
+    	<apex:includeScript value="{!URLFOR($Resource.myListJS)}"/>
+    	<apex:includeScript value="{!URLFOR($Resource.myJSVendor)}"/>
+    </head>
+    <body ng-app = "myApp"  ng-controller="myController">
+        <div class = "main">
+        	<h1 class = "header" ng-click = "selectButton('Account')">ACCOUNT</h1>
+            <h1 class = "header" ng-click = "selectButton('Contact')">CONTACT</h1>
+            <h1 class = "header" ng-click = "selectButton('Job_Rasika__c')">JOB</h1>
+            <h1 class = "header" ng-click = "selectButton('Candidate_Rasika__c')">CANDIDATE</h1>
+        </div>
+        <div id = "selectField">
+            <div id = "headerField">
+            	<h3>Select Field</h3>
+            </div>
+            <div id = "fieldNav">
+            	<div ng-repeat = "field in fields">
+                	<input type = "checkbox" ng-value = "{{field.apiname}}" ng-model="field.selected"/>{{field.label}}
+    			</div>
+            </div>
+            <div id = "btnField">
+            	<button ng-click = "run()">Run</button>
+            </div>
+        </div>
+        <div id = "tDiv">
+            <my-list fields= 'fields' records = 'result' s-object-name = 'sObjectName' delete-action = 'deleteRecord(sObjectName, Id, onSuccess,onError)' ></my-list>
+        </div>
+	</body>
+</html>
+</apex:page>

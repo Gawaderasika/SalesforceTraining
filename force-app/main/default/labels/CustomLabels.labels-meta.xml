@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Salary_expected</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Salary expected</shortDescription>
+        <value>Salaire attendu</value>
+    </labels>
+    <labels>
+        <fullName>Starting_Mileage</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Starting Mileage</shortDescription>
+        <value>Kilométrage de départ</value>
+    </labels>
+    <labels>
+        <fullName>Trigger_on_candidate_salary_missing</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Trigger on candidate- salary missing</shortDescription>
+        <value>Méthode de test: erreur de déclenchement: le champ Salaire attendu est manquant</value>
+    </labels>
+    <labels>
+        <fullName>salesforceLogoDescription</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>salesforceLogoDescription</shortDescription>
+        <value>Salesforce Official Logo</value>
+    </labels>
+</CustomLabels>

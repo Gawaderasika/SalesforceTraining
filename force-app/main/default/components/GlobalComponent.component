@@ -1,0 +1,56 @@
+<apex:component controller="GlobalResources">
+    <apex:attribute name="localUrl" type="String" default="https://localhost/test/" required="false" description="Use local resources?" />
+    <apex:attribute name="local" type="Boolean" default="false" required="false" description="Use local resources?" />
+    <apex:attribute name="debug" type="Boolean" default="false" required="false" description="Use debug resources?" />
+    <apex:attribute name="Application_JS" type="String" default="" assignto="{!Application_JS_List}" required="false" description="Additional Application_JS resources" />
+    <apex:attribute name="Application_CSS" type="String" default="" assignto="{!Application_CSS_List}" required="false" description="Additional Application_CSS resources" />
+    <apex:attribute name="Vendor_JS" type="String" default="" assignto="{!Vendor_JS_List}" required="false" description="Additional Vendor_JS resources" />
+    <apex:attribute name="Vendor_CSS" type="String" default="" assignto="{!Vendor_CSS_List}" required="false" description="Additional Vendor_CSS resources" />
+
+    <meta name="viewport" http-equiv="X-UA-Compatible" content="width=device-width, initial-scale=1, IE=edge"></meta>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
+    <apex:variable var="cssPath" value="{!IF(Local,LocalUrl & 'application_css' & '/attachments.css', URLFOR($Resource.Application_CSS, '/attachments.css'))}" />
+    <apex:variable var="vendorCssPath" value="{!IF(Local,LocalUrl & 'vendor_css' & '/attachments.css', URLFOR($Resource.Vendor_CSS, '/attachments.css'))}" />
+    <apex:variable var="scriptPath" value="{!IF(Local,LocalUrl & 'application_js' & '/myscript.js', URLFOR($Resource.Application_JS, IF( Debug, '/debug/myscript.js', '/myscript.js')))}" />
+    <apex:variable var="vendorJsPath" value="{!IF(Local,LocalUrl & 'vendor_js' & '/myscript.js', URLFOR($Resource.Vendor_JS, '/myscript.js'))}" />
+    
+	<!-- Load user supplied vendor css files -->
+    <apex:repeat var="vnd_css" value="{!Vendor_CSS_Files}">
+        <apex:outputPanel rendered="{!(CONTAINS(vnd_css,'.css'))}">
+            <apex:stylesheet value="{!SUBSTITUTE(vendorCssPath,'/attachments.css','/' + vnd_css)}"  />
+        </apex:outputPanel>   
+    </apex:repeat>
+    
+    <!-- Load user supplied vendor js files -->
+    <apex:repeat var="vnd_js" value="{!Vendor_JS_Files}">     
+        <apex:outputPanel rendered="{!(CONTAINS(vnd_js,'.js'))}">
+            <apex:includescript value="{!SUBSTITUTE(vendorJsPath,'/myscript.js','/' + vnd_js)}" />
+        </apex:outputPanel>
+    </apex:repeat>      
+    
+    <!-- Load user supplied application css files -->
+    <apex:repeat var="app_css" value="{!Application_CSS_Files}">
+        <apex:stylesheet value="{!SUBSTITUTE(cssPath,'/attachments.css','/' + app_css)}" />
+    </apex:repeat>    
+ 
+    <!-- Load user supplied application js files -->
+    <apex:repeat var="app_js" value="{!Application_JS_Files}">
+        <apex:includescript value="{!SUBSTITUTE(scriptPath,'/myscript.js','/' + app_js)}" />
+    </apex:repeat>    
+
+   <script language="javascript">
+        var application_js = '{!IF(Local,LocalUrl & 'application_js/', URLFOR($Resource.Application_JS, '/'))}';
+        var application_css = '{!IF(Local,LocalUrl & 'application_css/', URLFOR($Resource.Application_CSS, '/'))}';
+        var vendor_js = '{!IF(Local,LocalUrl & 'vendor_js/', URLFOR($Resource.Vendor_JS, '/'))}';
+        var vendor_css = '{!IF(Local,LocalUrl & 'vendor_css/', URLFOR($Resource.Vendor_CSS, '/'))}';
+        
+        function getBaseUrl(a){return (a.protocol == "" ? location.protocol : a.protocol) +'//' + (a.host == "" ? location.host : a.hostname) + ((a.pathname.charAt(0) == '/')?'':'/') + a.pathname;}
+    
+        application_js = getBaseUrl($('<a>', { href: application_js })[0]);
+        application_css = getBaseUrl($('<a>', { href: application_css })[0]);
+        vendor_js = getBaseUrl($('<a>', { href: vendor_js })[0]);
+        vendor_css = getBaseUrl($('<a>', { href: vendor_css })[0]);
+        
+    </script>
+</apex:component>

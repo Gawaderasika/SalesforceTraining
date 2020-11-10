@@ -1,0 +1,7 @@
+<apex:page controller="Describer">
+   
+    <apex:dataTable value="{!FieldList}" var="field">
+        <apex:column value="{!field}"/>
+        <apex:column value="{!FieldList[field]}"/>
+    </apex:dataTable>
+</apex:page>

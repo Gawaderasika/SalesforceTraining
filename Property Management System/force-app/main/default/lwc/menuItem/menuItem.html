@@ -1,0 +1,24 @@
+<template>
+    <li class={className} role="presentation" key={item.value} if:false={item.subType}
+        onclick={onclickHideMenu}>
+        <a role="menuitem" href="javascript:;">
+            <span class="slds-truncate" title={item.title}>
+                <lightning-icon icon-name={item.iconName} size={item.iconSize} if:true={item.iconName}></lightning-icon>
+                <p class="item-padding">{item.value}</p>
+                <lightning-icon icon-name="" size="xx-small"></lightning-icon>
+            </span>
+        </a>
+    </li>
+    <li class="slds-dropdown__item slds-has-submenu" role="presentation" key={item.value} if:true={item.subType}
+        onclick={onClickDisplaySubMenu} onmouseleave={lostFocusHideSubMenu}>
+        <a role="menuitem" href="javascript:;" aria-haspopup="true" aria-expanded="true">
+            <span class="slds-truncate" title={item.title}>
+                <lightning-icon icon-name={item.iconName} size={item.iconSize} if:true={item.iconName}></lightning-icon>
+                <p class="item-padding">{item.value}</p>
+                <lightning-icon icon-name="utility:right" size="xx-small"></lightning-icon>
+            </span>
+        </a>
+        <c-menu menu-item={item.subType} type='subType' client-x={clientX} client-y = {clientY} if:true={showChild}>
+        </c-menu>
+    </li>
+</template>

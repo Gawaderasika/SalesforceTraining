@@ -1,0 +1,9 @@
+<apex:page standardController="Job_Rasika__c" recordSetVar="jobs">
+    <apex:pageBlock title="Job List">
+        <!-- Contacts List -->
+        <apex:pageBlockTable value="{! jobs }" var="jb">
+            <apex:column value="{! jb.Name }" rendered="false" />
+            <apex:column value="{! jb.Number_of_Positions__c }"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

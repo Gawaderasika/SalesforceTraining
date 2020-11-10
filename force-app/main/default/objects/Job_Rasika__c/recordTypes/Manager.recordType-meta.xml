@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Manager</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>Job_Highlihgt_Panel</compactLayoutAssignment>
+    <label>Manager</label>
+    <picklistValues>
+        <picklist>Certification_Required__c</picklist>
+        <values>
+            <fullName>CMP %28Certified Project Manager%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MPM %28Master Project Manager%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PMP %28Project Management Professional%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Qualifications_Required__c</picklist>
+        <values>
+            <fullName>BBA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bcom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MBA</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Required_Skills__c</picklist>
+        <values>
+            <fullName>People Skills</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Team Player</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,24 @@
+<apex:component >
+    
+    <!-- Details of candidates -->
+    <apex:attribute name="candidateRecords" type="string[]" required="true" description=""/>
+    <apex:attribute name="candidate" type="Candidate_Rasika__c[]" required="true" description=""/>
+    
+    <table border="1" >
+        <tr>
+        	<th>Candidate Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Status</th>
+        </tr>
+        <apex:repeat var="item" value="{!candidate}">
+            <tr>
+                <td>{!item.Name}</td>
+                <td>{!item.Full_Name__c}</td>
+                <td>{!item.Email__c}</td>
+                <td>{!item.Status__c}</td>
+  			</tr>
+        </apex:repeat> 
+    </table>
+
+</apex:component>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- StudentMaster --></label>
+    <name>StudentMaster__c</name>
+    <relationshipLabel><!-- Studentmarks2s --></relationshipLabel>
+</CustomFieldTranslation>

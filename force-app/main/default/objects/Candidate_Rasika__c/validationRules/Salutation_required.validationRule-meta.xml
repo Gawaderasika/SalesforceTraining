@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Salutation_required</fullName>
+    <active>true</active>
+    <description>If Email__c != null, Expected_Salary__c  is required</description>
+    <errorConditionFormula>AND( Email__c  &lt;&gt; null, Expected_Salary__c  = null)</errorConditionFormula>
+    <errorMessage>If Email__c != null, Expected_Salary__c  is required</errorMessage>
+</ValidationRule>

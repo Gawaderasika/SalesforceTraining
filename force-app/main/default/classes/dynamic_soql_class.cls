@@ -1,3 +1,17 @@
+/********************************************************************** 
+Name: dynamic_soql_class
+Copyright © 2009 Enzigma Software Pvt Ltd. 
+====================================================== 
+====================================================== 
+Purpose: Dynamic SOQL
+------- 
+====================================================== 
+====================================================== 
+History 
+------- 
+VERSION AUTHOR DATE DETAIL FEATURES/CSR/TTP 
+1.0 - Name 10/09/2020 INITIAL DEVELOPMENT 
+***********************************************************************/
 public class dynamic_soql_class {
     public String q{set;get;}
     public List<Account> a {set;get;}

@@ -1,0 +1,11 @@
+<apex:page controller="AccountWithSharing">
+    <apex:detail relatedList="false"/>
+    <apex:form >
+    	<apex:pageBlock >
+            <apex:pageBlockSection >
+            	<apex:inputField value="{!c.Id}" id="Id"/><br/><br/><br/>
+                <apex:inputField value="{!c.Number_of_Contacts__c}" id="Number_of_Contacts__c"/><br/><br/><br/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

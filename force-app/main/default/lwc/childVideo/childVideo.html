@@ -1,0 +1,11 @@
+<template>
+    <!--Parent to child-->
+    <lightning-card title="Child component">
+        <p>{myName}</p>
+    </lightning-card>
+
+    <!--Child to aprent-->
+    <lightning-card title="Child Component">
+        <lightning-button label="Pass single parameter" onclick={handleMe}></lightning-button>
+    </lightning-card>
+</template>

@@ -35,7 +35,7 @@ export default class Field extends Service {
   @api apiName;
   @api label;
   @api type;
-  @api isAccessible;
+  //@api isAccessible;
   @api isUpdateable;
   @api isRequired;
   @api isDisabled;

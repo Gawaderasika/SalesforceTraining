@@ -1,0 +1,195 @@
+<template>
+    <div class="slds-grid slds-wrap slds-p-around_x-small booking-grid" style={gridWidth}>
+        <div class="slds-col slds-size_1-of-1">
+            <!-- Header Content -->
+            <c-grid-header onviewchange={viewChange}
+                                        current-month-year={_currentMonthAndYear}
+                                        selected-date={gridCurrentDate} is-spinner={_isSpinner}></c-grid-header>
+            <!-- End Header Content -->
+        </div>
+        <div class="slds-col slds-size_1-of-1 ">
+            <div class="slds-table--header-fixed_container" style="height:350px;">
+                <div class="slds-scrollable_y" style="height:100%;">
+                    <table aria-multiselectable="true" oncontextmenu={clickdisable}
+                        class="slds-table slds-no-row-hover slds-table_bordered slds-table_col-bordered slds-table_edit slds-table_fixed-layout slds-table_resizable-cols slds-tree slds-table_tree slds-table--header-fixed"
+                        role="treegrid">
+                        <thead>
+                            <tr class="slds-line-height_reset">
+                                <!-- Search Box -->
+                                <th aria-label="Search"
+                                    aria-sort="none"
+                                    class="slds-has-button-menu slds-is-resizable slds-is-sortable"
+                                    scope="col"
+                                    onkeyup={handleSearch}
+                                    style={menuColumnWidth}>
+                                    <div class="slds-form-element slds-cell-fixed" style={menuColumnWidth}>
+                                        <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+                                            <lightning-icon icon-name="utility:search"
+                                                            size="x-small"
+                                                            alternative-text="search"
+                                                            class="slds-icon slds-input__icon slds-input__icon_right"
+                                                            aria-hidden="true">
+                                            </lightning-icon>
+                                            <input type="text"
+                                                    id="text-input-id-1"
+                                                    placeholder="Search.."
+                                                    class="slds-input" />
+                                        </div>
+                                    </div>
+                                </th>
+                                <!--End Search Box -->
+                                <!-- Column Dates -->
+                                <!--"slds-has-button-menu slds-is-sortable pwr-width"-->
+                                <template iterator:date={_columnDates}>
+                                    <th data-id={date.value.key}
+                                        aria-sort="none"
+                                        class= "slds-has-button-menu slds-is-sortable pwr-width"
+                                        scope="col"
+                                        style="min-width: 500px;"
+                                        key={date.value.key}>
+                                        <div class="slds-cell-fixed" >
+                                            <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate slds-align_absolute-center bookingCell ">
+                                                <span class="slds-truncate"
+                                                    title="">
+                                                    {date.value.day}
+                                                </span>
+                                            </div>
+                                            <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate slds-align_absolute-center bookingCell ">
+                                                <span class="slds-truncate"
+                                                    title="">
+                                                    {date.value.dayName}
+                                                </span>
+                                            </div>
+                                        </div>    
+                                    </th>
+                                </template>
+                                <!--End Column Dates -->
+                            </tr>
+                        </thead>
+                        <tbody>   
+                            <template if:true={_arrbookingEntities}
+                                    for:each={_arrbookingEntities}
+                                    for:item="bookingEntity">
+                                <!-- Parent tr -->
+                                <tr aria-expanded="true"
+                                    data-id={bookingEntity.data_id}
+                                    data-row-key-value={bookingEntity.datarowkeyvalue}
+                                    aria-level={bookingEntity.level}
+                                    aria-posinset={bookingEntity.posinset}
+                                    aria-selected="false"
+                                    aria-setsize={bookingEntity.setsize}
+                                    class="slds-hint-parent"
+                                    key={bookingEntity.id}>
+
+
+                                    <td class="slds-tree__item parent cursor-type"
+                                        data-label="">
+                                
+                                        <template if:true={bookingEntity.ischild}>
+                                            <button class="slds-button slds-button_icon slds-button_icon-x-small slds-m-right_x-small"
+                                                    aria-hidden="true"
+                                                    tabindex="-1"
+                                                    onclick={handleCollapseExpand}
+                                                    title="">
+                                                <lightning-icon icon-name="utility:chevronright"
+                                                                size="xx-small"
+                                                                alternative-text="chevronright"
+                                                                class="slds-button__icon slds-button__icon_small"
+                                                                aria-hidden="true">
+                                                </lightning-icon>
+                                            </button>
+                                        </template>
+                                        <template if:false={bookingEntity.ischild}>
+                                            <button class="slds-button slds-button_icon slds-button_icon-x-small slds-m-right_x-small slds-is-disabled"
+                                                    aria-hidden="true"
+                                                    tabindex="-1"
+                                                    title="">
+                                            </button>
+                                        </template>
+                                        <div class="slds-truncate"
+                                            title={bookingEntity.label} style="font-weight: bold;">
+                                            {bookingEntity.label}
+                                        </div>
+                                    </td>
+
+                                    <template for:each={bookingEntity.columns}
+                                            for:item="cell">
+                                        <td data-id={cell.data_id}
+                                            class="bookingCell div-border no-select-link"
+                                            key={cell.data_id}
+                                            lwc:dom="manual">
+
+                                        </td>
+                                    </template>
+                                </tr>
+
+                                <template if:true={bookingEntity.children}
+                                        for:each={bookingEntity.children}
+                                        for:item="bookingEntity_child">
+                                    <!-- Child tr -->
+                                    <tr aria-expanded="true"
+                                        data-id={bookingEntity_child.data_id}
+                                        data-row-key-value={bookingEntity_child.datarowkeyvalue}
+                                        aria-level={bookingEntity_child.level}
+                                        aria-posinset={bookingEntity_child.posinset}
+                                        aria-selected="false"
+                                        aria-setsize={bookingEntity_child.setsize}
+                                        class="slds-hint-parent"
+                                        key={bookingEntity_child.id}>
+
+                                        <td class="slds-tree__item"
+                                            data-label="" 
+                                            data-id={bookingEntity_child.data_id}
+                                            oncontextmenu={unitClicked}
+                                            title={bookingEntity_child.title}
+                                            >
+                                            <template if:true={bookingEntity_child.ischild}>
+                                                <button id={bookingEntity_child.id}
+                                                        class="slds-button slds-button_icon slds-button_icon-x-small slds-m-right_x-small"
+                                                        aria-hidden="true"
+                                                        tabindex="-1"
+                                                        onclick={handleCollapseExpand}
+                                                        title="">
+                                                    <lightning-icon icon-name="utility:chevronright"
+                                                                    size="xx-small"
+                                                                    alternative-text="chevronright"
+                                                                    class="slds-button__icon slds-button__icon_small"
+                                                                    aria-hidden="true">
+                                                    </lightning-icon>
+
+                                                </button>
+                                            </template>
+
+                                            <template if:false={bookingEntity_child.ischild}>
+                                                <button class="slds-button slds-button_icon slds-button_icon-x-small slds-m-right_x-small slds-is-disabled"
+                                                        aria-hidden="true"
+                                                        tabindex="-1"
+                                                        title=""> </button>
+                                            </template>
+
+                                            <div class="slds-truncate no-select"
+                                            title={bookingEntity_child.title}>
+                                                {bookingEntity_child.label}
+                                            </div>
+                                        </td>
+
+                                        <template for:each={bookingEntity_child.columns}
+                                                for:item="cell">
+                                            <td data-id={cell.data_id}
+                                                class="bookingCell"
+                                                key={cell.data_id}
+                                                lwc:dom="manual">
+                                            </td>
+                                        </template>
+                                    </tr>
+                                </template>
+                            </template>
+                        </tbody>
+                    </table>
+                    <div if:true={noRecordFound} class="slds-text-heading_medium slds-align_absolute-center slds-text-color_error fontFix">No Record Found</div> 
+                </div>
+            </div>
+        </div>
+        <div class="selectmulticell"  if:true={_isDivVisible}></div>
+    </div>
+</template>

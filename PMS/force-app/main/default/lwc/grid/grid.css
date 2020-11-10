@@ -1,0 +1,105 @@
+.slds-tree [aria-expanded="false"] > .slds-tree__item > .slds-button[aria-controls] > .slds-button__icon,
+.slds-tree [aria-expanded="false"] > .slds-tree__item > .slds-button[aria-controls] > span > .slds-button__icon {
+  transition: 0.2s transform ease-in-out;
+  transform: rotate(0deg);
+}
+
+.cursor-type
+{
+  cursor: initial !important;
+}
+
+.booked{
+  text-align: center;
+  position: relative;
+  user-select: none;
+  vertical-align: middle;
+  line-height: 22px;
+  vertical-align: middle;
+  text-align: center;
+  border: solid 1px rgb(206, 206, 206);
+  border-radius: 4px;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: #48a8f4;
+  z-index: 10;
+}
+.dirtyclass{
+  background-color: rgb(189, 111, 33);
+}
+
+.interrupted{
+  text-align: center;
+  position: relative;
+  user-select: none;
+  vertical-align: middle;
+  line-height: 22px;
+  vertical-align: middle;
+  text-align: center;
+  border: solid 1px rgb(206, 206, 206);
+  border-radius: 4px;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: #ff7600;
+  z-index: 10;
+}
+.parent{
+  position: relative;
+
+}
+
+.slds-tree [aria-expanded="true"] > .slds-tree__item > .slds-button > .slds-button__icon,
+.slds-tree [aria-expanded="true"] > .slds-tree__item > .slds-button > span > .slds-button__icon {
+  transition: 0.2s transform ease-in-out;
+  transform: rotate(90deg);
+}
+
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 1360px) {
+  /* insert styles here */
+   th.pwr-width { width: 40px; }
+}
+
+@media (pointer:coarse) and (hover:none){
+  .slds-button--icon-x-small,.slds-button_icon-x-small{width:1.75rem;height:1.75rem}
+}
+
+.hide{
+  display: none;
+}
+
+.selected{
+  background: #ccc;
+}
+.selectmulticell{
+  border: 1px #000;
+  position: fixed;
+  background:  #000;
+  opacity: 0.8;
+  pointer-events: none;
+}
+.div-border{
+  border: 0.01rem solid #dddbda !important;
+  border-left: none !important;
+  background-color: #cecece;
+}
+.bg-selected-cell{
+  background-color : gray;
+}
+
+.fontFix{
+  font-weight: var(--lwc-fontWeightBold,700) !important;
+  font-size: small;
+}
+.no-select
+{
+  color :black !important ;
+  user-select: none !important ;
+}
+.no-select-link
+{
+ 
+  user-select: none !important ;
+}

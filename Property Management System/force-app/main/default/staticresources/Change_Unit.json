@@ -1,0 +1,287 @@
+{
+  "_id": "5e203b3c5fe41900117b9d82",
+  "label": "Change Unit",
+  "name": "Change_Unit",
+  "objType": "layout",
+  "owner": "5e1ff0e444f12f001107a8a8",
+  "createdBy": "5e1ff0e444f12f001107a8a8",
+  "instance": "5e1ff19cf9cb010011693869",
+  "isDeleted": false,
+  "isTestRecord": false,
+  "createdOn": {
+    "$date": {
+      "$numberLong": "1579170620790"
+    }
+  },
+  "lastModifiedBy": "5e1ff0e444f12f001107a8a8",
+  "lastModifiedOn": {
+    "$date": {
+      "$numberLong": "1579171116234"
+    }
+  },
+  "actions": [
+    {
+      "workProcess": "Save",
+      "name": "Save",
+      "label": "Save",
+      "type": "workProcess",
+      "_id": "5e203d2ce90f9800118f44bb"
+    },
+    {
+      "name": "Cancel",
+      "label": "Cancel",
+      "type": "popModal",
+      "_id": "5e203d2ce90f9800118f44bc"
+    },
+    {
+      "model": "Unit_Type_Reservations",
+      "name": "Unit_Type_Reservations",
+      "label": "Unit Type Reservations",
+      "type": "save",
+      "_id": "5e203d2ce90f9800118f44bd"
+    },
+    {
+      "message": "successmessage",
+      "name": "success_message",
+      "label": "success message",
+      "type": "successMessage",
+      "_id": "5e203d2ce90f9800118f44be"
+    },
+    {
+      "workProcess": "Close_Modal",
+      "name": "closeModal",
+      "label": "Close Modal",
+      "type": "workProcess",
+      "_id": "5e203d2ce90f9800118f44bf"
+    }
+  ],
+  "layout": {
+    "footerView": {
+      "childs": [
+        {
+          "id": "footerView-reck",
+          "type": "button",
+          "label": "Cancel",
+          "translations": {},
+          "childs": [],
+          "disabled": false,
+          "validation": [],
+          "visibility": {
+            "criteria": {
+              "conditions": [{}],
+              "evaluationCriteria": "and"
+            }
+          },
+          "onclick": {
+            "action": "Cancel",
+            "type": "popModal"
+          },
+          "model": "Unit_Type_Reservations",
+          "modelType": "dataModel",
+          "_id": "5e203d2ce90f9800118f44b3"
+        },
+        {
+          "id": "footerView-p97u",
+          "type": "button",
+          "label": "Save",
+          "translations": {},
+          "childs": [],
+          "buttonType": "primary",
+          "disabled": false,
+          "validation": [],
+          "visibility": {
+            "criteria": {
+              "conditions": [{}],
+              "evaluationCriteria": "and"
+            }
+          },
+          "onclick": {
+            "action": "Save",
+            "type": "workProcess"
+          },
+          "model": "Unit_Type_Reservations",
+          "modelType": "dataModel",
+          "_id": "5e203d2ce90f9800118f44b4"
+        }
+      ]
+    },
+    "contentView": {
+      "childs": [
+        {
+          "id": "contentView-5v78",
+          "type": "section",
+          "label": "Reservation Details",
+          "translations": {},
+          "childs": [
+            {
+              "id": "contentView-5v78-wbqs",
+              "type": "form",
+              "label": "new form",
+              "fields": [
+                {
+                  "model": "Unit_Type_Reservations",
+                  "label": "Start Date",
+                  "path": "epms__Start_Date__c",
+                  "name": "epms__Start_Date__c",
+                  "type": "date",
+                  "id": "contentView-5v78-wbqs-dza7",
+                  "required": false,
+                  "hideLabel": false,
+                  "disabled": false,
+                  "readOnly": true,
+                  "validation": [],
+                  "visibility": {
+                    "criteria": {
+                      "conditions": [{}],
+                      "evaluationCriteria": "and"
+                    }
+                  },
+                  "onload": {},
+                  "onchange": {},
+                  "onblur": {},
+                  "onfocus": {},
+                  "modelType": "dataModel",
+                  "_id": "5e203d2ce90f9800118f44b7"
+                },
+                {
+                  "model": "Unit_Type_Reservations",
+                  "label": "End Date",
+                  "path": "epms__End_Date__c",
+                  "name": "epms__End_Date__c",
+                  "type": "date",
+                  "id": "contentView-5v78-wbqs-3fe5",
+                  "required": false,
+                  "hideLabel": false,
+                  "disabled": false,
+                  "readOnly": true,
+                  "validation": [],
+                  "visibility": {
+                    "criteria": {
+                      "conditions": [{}],
+                      "evaluationCriteria": "and"
+                    }
+                  },
+                  "onload": {},
+                  "onchange": {},
+                  "onblur": {},
+                  "onfocus": {},
+                  "modelType": "dataModel",
+                  "_id": "5e203d2ce90f9800118f44b8"
+                },
+                {
+                  "model": "Unit_Type_Reservations",
+                  "label": "Unit Type",
+                  "path": "epms__Unit_Type__c",
+                  "name": "epms__Unit_Type__c",
+                  "type": "reference",
+                  "id": "contentView-5v78-wbqs-e4hc",
+                  "required": false,
+                  "hideLabel": false,
+                  "disabled": true,
+                  "readOnly": false,
+                  "validation": [],
+                  "visibility": {
+                    "criteria": {
+                      "conditions": [{}],
+                      "evaluationCriteria": "and"
+                    }
+                  },
+                  "onload": {},
+                  "onchange": {},
+                  "onblur": {},
+                  "onfocus": {},
+                  "modelType": "dataModel",
+                  "_id": "5e203d2ce90f9800118f44b9"
+                },
+                {
+                  "model": "Unit_Type_Reservations",
+                  "label": "Unit",
+                  "path": "epms__Unit__c",
+                  "name": "epms__Unit__c",
+                  "type": "reference",
+                  "reference": "Unit_Type_Reservations",
+                  "referenceField": "epms__Unit_Type__c",
+                  "id": "contentView-5v78-wbqs-oiry",
+                  "required": true,
+                  "_id": "5e203d2ce90f9800118f44ba"
+                }
+              ],
+              "model": "Unit_Type_Reservations",
+              "isVisibility": true,
+              "largeSize": {
+                "$numberInt": "6"
+              },
+              "validation": [],
+              "visibility": {
+                "criteria": {
+                  "conditions": [{}],
+                  "evaluationCriteria": "and"
+                }
+              },
+              "onload": {},
+              "modelType": "dataModel",
+              "_id": "5e203d2ce90f9800118f44b6"
+            }
+          ],
+          "validation": [],
+          "visibility": {
+            "criteria": {
+              "conditions": [{}],
+              "evaluationCriteria": "and"
+            }
+          },
+          "headeraction": [],
+          "model": "Unit_Type_Reservations",
+          "modelType": "dataModel",
+          "_id": "5e203d2ce90f9800118f44b5"
+        }
+      ]
+    },
+    "type": "modal",
+    "styles": ""
+  },
+  "models": ["Unit_Type_Reservations"],
+  "tags": [],
+  "validationRules": [],
+  "workProcesses": [
+    {
+      "name": "Close_Modal",
+      "label": "Close Modal",
+      "actions": [
+        {
+          "type": "successMessage",
+          "message": "Record saved",
+          "_id": "5e203d2ce90f9800118f44c1"
+        }
+      ],
+      "onSuccess": {
+        "type": "popModal"
+      },
+      "onError": {
+        "type": "errorMessage",
+        "message": "Error while saving record"
+      },
+      "_id": "5e203d2ce90f9800118f44c0"
+    },
+    {
+      "name": "Save",
+      "label": "Save",
+      "actions": [
+        {
+          "type": "save",
+          "model": "Unit_Type_Reservations",
+          "_id": "5e203d2ce90f9800118f44c3"
+        }
+      ],
+      "onSuccess": {
+        "type": "workProcess",
+        "workProcess": "Close_Modal"
+      },
+      "onError": {
+        "type": "errorMessage",
+        "message": "Error while saving record"
+      },
+      "_id": "5e203d2ce90f9800118f44c2"
+    }
+  ]
+}

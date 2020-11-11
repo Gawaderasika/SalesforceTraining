@@ -117,7 +117,8 @@ export default class PropertyManagementSystem extends NavigationMixin(LightningE
     @track bookingEntities;
     @track bookingData;
     @track serviceInterruptionData;
-    @track showGrid = false;
+    //change - 1
+    @track showGrid = true;
     @track logoIcon;
     @track isSpinner;
     @track isOpenModal;
@@ -180,7 +181,6 @@ export default class PropertyManagementSystem extends NavigationMixin(LightningE
     @track showLookup = false;
 
     connectedCallback() {
-        debugger;
         this.getNamespace();
         this.objectApiName = UNIT_TYPE_OBJECT.objectApiName;
         this.fieldApiName = PROPERTY_FIELD.fieldApiName;

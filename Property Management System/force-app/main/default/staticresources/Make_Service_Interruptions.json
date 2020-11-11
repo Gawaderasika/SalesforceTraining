@@ -1,0 +1,261 @@
+{
+  "_id": "5e20521e94cf34001133bbeb",
+  "label": "Make Service Interruption",
+  "name": "Make_Service_Interruptions",
+  "objType": "layout",
+  "owner": "5e1ff0e444f12f001107a8a8",
+  "createdBy": "5e1ff0e444f12f001107a8a8",
+  "instance": "5e1ff19cf9cb010011693869",
+  "isDeleted": false,
+  "isTestRecord": false,
+  "createdOn": {
+    "$date": {
+      "$numberLong": "1579176478560"
+    }
+  },
+  "lastModifiedBy": "5e1ff0e444f12f001107a8a8",
+  "lastModifiedOn": {
+    "$date": {
+      "$numberLong": "1579176877703"
+    }
+  },
+  "actions": [
+    {
+      "workProcess": "Save",
+      "name": "Save",
+      "label": "Save",
+      "type": "workProcess",
+      "_id": "5e2053ad3b57ab0011774751"
+    },
+    {
+      "name": "Cancel",
+      "label": "Cancel",
+      "type": "popModal",
+      "_id": "5e2053ad3b57ab0011774752"
+    }
+  ],
+  "layout": {
+    "footerView": {
+      "childs": [
+        {
+          "id": "footerView-9xrf",
+          "type": "button",
+          "label": "Cancel",
+          "translations": {},
+          "childs": [],
+          "disabled": false,
+          "validation": [],
+          "visibility": {
+            "criteria": {
+              "conditions": [{}],
+              "evaluationCriteria": "and"
+            }
+          },
+          "onclick": {
+            "action": "Cancel",
+            "type": "popModal"
+          },
+          "model": "Service_Interruptions",
+          "modelType": "dataModel",
+          "_id": "5e2053ad3b57ab0011774748"
+        },
+        {
+          "id": "footerView-uilu",
+          "type": "button",
+          "label": "Save",
+          "translations": {},
+          "childs": [],
+          "buttonType": "primary",
+          "disabled": false,
+          "validation": [],
+          "visibility": {
+            "criteria": {
+              "conditions": [{}],
+              "evaluationCriteria": "and"
+            }
+          },
+          "onclick": {
+            "action": "Save",
+            "type": "workProcess"
+          },
+          "model": "Service_Interruptions",
+          "modelType": "dataModel",
+          "_id": "5e2053ad3b57ab0011774749"
+        }
+      ]
+    },
+    "contentView": {
+      "childs": [
+        {
+          "id": "contentView-h4fo",
+          "type": "repeater",
+          "label": "new repeater",
+          "model": "Service_Interruptions",
+          "translations": {},
+          "childs": [
+            {
+              "id": "contentView-h4fo-ryeg",
+              "type": "section",
+              "label": "Service Interruption Details",
+              "translations": {},
+              "childs": [
+                {
+                  "id": "contentView-h4fo-ryeg-t6s3",
+                  "type": "form",
+                  "label": "new form",
+                  "fields": [
+                    {
+                      "model": "Service_Interruptions",
+                      "label": "Start Date",
+                      "path": "epms__Start_Date__c",
+                      "name": "epms__Start_Date__c",
+                      "type": "date",
+                      "id": "contentView-h4fo-ryeg-t6s3-2bd2",
+                      "_id": "5e2053ad3b57ab001177474d"
+                    },
+                    {
+                      "model": "Service_Interruptions",
+                      "label": "End Date",
+                      "path": "epms__End_Date__c",
+                      "name": "epms__End_Date__c",
+                      "type": "date",
+                      "id": "contentView-h4fo-ryeg-t6s3-ffjv",
+                      "_id": "5e2053ad3b57ab001177474e"
+                    },
+                    {
+                      "model": "Service_Interruptions",
+                      "label": "Unit",
+                      "path": "epms__Unit__c",
+                      "name": "epms__Unit__c",
+                      "type": "reference",
+                      "reference": "Service_Interruptions",
+                      "referenceField": "epms__Property__c",
+                      "id": "contentView-h4fo-ryeg-t6s3-1v1k",
+                      "_id": "5e2053ad3b57ab001177474f"
+                    },
+                    {
+                      "model": "Service_Interruptions",
+                      "label": "Reason",
+                      "path": "epms__Interruption_Reason__c",
+                      "name": "epms__Interruption_Reason__c",
+                      "type": "text",
+                      "id": "contentView-h4fo-ryeg-t6s3-ap71",
+                      "_id": "5e2053ad3b57ab0011774750"
+                    },
+                    {
+                      "model": "Service_Interruptions",
+                      "label": "Other Reason",
+                      "path": "epms__Other_Reason__c",
+                      "name": "epms__Other_Reason__c",
+                      "type": "textarea",
+                      "id": "contentView-rju8-xmdb-vu16",
+                      "required": false,
+                      "hideLabel": false,
+                      "disabled": false,
+                      "readOnly": false,
+                      "validation": [],
+                      "visibility": {
+                        "criteria": {
+                          "conditions": [
+                            {
+                              "source": "model.Service_Interruptions.epms__Interruption_Reason__c",
+                              "operator": "equals",
+                              "destination": "static.Other",
+                              "_id": "5e203a55f130eb0011132e52"
+                            }
+                          ],
+                          "evaluationCriteria": "and"
+                        },
+                        "visibilityAction": "hide"
+                      },
+                      "onload": {},
+                      "onchange": {},
+                      "onblur": {},
+                      "onfocus": {},
+                      "modelType": "dataModel",
+                      "_id": "5e203a55f130eb0011132e51"
+                    }
+                  ],
+                  "model": "Service_Interruptions",
+                  "isVisibility": true,
+                  "largeSize": {
+                    "$numberInt": "6"
+                  },
+                  "validation": [],
+                  "visibility": {
+                    "criteria": {
+                      "conditions": [{}],
+                      "evaluationCriteria": "and"
+                    }
+                  },
+                  "onload": {},
+                  "modelType": "dataModel",
+                  "_id": "5e2053ad3b57ab001177474c"
+                }
+              ],
+              "isVisibility": true,
+              "validation": [],
+              "visibility": {
+                "criteria": {
+                  "conditions": [{}],
+                  "evaluationCriteria": "and"
+                }
+              },
+              "headeraction": [],
+              "model": "Service_Interruptions",
+              "modelType": "dataModel",
+              "_id": "5e2053ad3b57ab001177474b"
+            }
+          ],
+          "_id": "5e2053ad3b57ab001177474a"
+        }
+      ]
+    },
+    "type": "modal",
+    "styles": ""
+  },
+  "models": ["Service_Interruptions"],
+  "tags": [],
+  "validationRules": [],
+  "workProcesses": [
+    {
+      "name": "Close_Modal",
+      "label": "Close Modal",
+      "actions": [
+        {
+          "type": "successMessage",
+          "message": "Record saved",
+          "_id": "5e2053ad3b57ab0011774754"
+        }
+      ],
+      "onSuccess": {
+        "type": "popModal"
+      },
+      "onError": {
+        "type": "errorMessage",
+        "message": "Error while saving record"
+      },
+      "_id": "5e2053ad3b57ab0011774753"
+    },
+    {
+      "name": "Save",
+      "label": "Save",
+      "actions": [
+        {
+          "type": "save",
+          "model": "Service_Interruptions",
+          "_id": "5e2053ad3b57ab0011774756"
+        }
+      ],
+      "onSuccess": {
+        "type": "workProcess",
+        "workProcess": "Close_Modal"
+      },
+      "onError": {
+        "type": "errorMessage",
+        "message": "Error while saving record"
+      },
+      "_id": "5e2053ad3b57ab0011774755"
+    }
+  ]
+}

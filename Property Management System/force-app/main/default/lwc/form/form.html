@@ -1,0 +1,20 @@
+<template>
+    <div class={formClass} >
+        <lightning-spinner if:true={_isLoading} alternative-text="Loading" variant="brand"></lightning-spinner> 
+        <template if:true={renderCondition} for:each={lstFieldsTODisplay} for:item="field" >
+            <div  key={field.name} if:true={field.fieldSchema.isAccessible} id={field.name} class={columnView} >
+                <c-field  field-id={field.id} 
+                                record-id={_currentRecordId} 
+                                field-schema={field.fieldSchema} 
+                                object-api-name={field.fieldSchema.objectApiName} 
+                                label={field.label} 
+                                type={field.type} 
+                                api-name={field.name} 
+                                onupdatefieldvalue={updateFieldValue} 
+                               
+                                record={_record} ></c-field>
+            </div>
+        </template>
+    </div>
+</template>
+<!-- onupdtdependntfldvalue={updtDependntFldValue}-->

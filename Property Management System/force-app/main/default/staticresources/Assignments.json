@@ -1,0 +1,57 @@
+{
+  "_id": "5dc3e42eddc0e10012292e21",
+  "objType": "model",
+  "fields": [
+    "OwnerId",
+    "IsDeleted",
+    "Name",
+    "CreatedDate",
+    "CreatedById",
+    "LastModifiedDate",
+    "LastModifiedById",
+    "SystemModstamp",
+    "LastActivityDate",
+    "epms__Check_In_Date__c",
+    "epms__Check_Out_Date__c",
+    "epms__Description__c",
+    "epms__Reservation_Member_Name__c",
+    "epms__Unit_Type_Reservation__c",
+    "epms__Unit_Type__c",
+    "epms__Unit__c"
+  ],
+  "criteria": {
+    "conditions": [
+      {
+        "valueType": "static",
+        "fieldName": null,
+        "operator": null,
+        "value": null
+      }
+    ],
+    "evaluationCriteria": "and",
+    "evaluation": ""
+  },
+  "modelDef": "Modeldef_Assignment",
+  "isWritable": true,
+  "sourceType": "dataModel",
+  "datasource": null,
+  "type": "single",
+  "label": "Assignments",
+  "name": "Assignments",
+  "owner": "5dc3e197ddc0e10012292ddf",
+  "createdBy": "5dc3e197ddc0e10012292ddf",
+  "instance": "5dc3e20dddc0e10012292e18",
+  "isDeleted": false,
+  "isTestRecord": false,
+  "createdOn": {
+    "$date": {
+      "$numberLong": "1573119022230"
+    }
+  },
+  "lastModifiedBy": "5dc3e197ddc0e10012292ddf",
+  "lastModifiedOn": {
+    "$date": {
+      "$numberLong": "1573119425908"
+    }
+  }
+}

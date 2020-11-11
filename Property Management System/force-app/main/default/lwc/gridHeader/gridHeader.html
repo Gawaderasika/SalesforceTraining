@@ -1,0 +1,80 @@
+<template>
+    <div class="slds-grid slds-wrap slds-page-header slds-page-header_record-home">
+        <div class="slds-col slds-size_1-of-2">
+            <div class="slds-page-header__row">
+                <div class="slds-col slds-size_1-of-1">
+                    <div class="slds-page-header__col-meta slds-grid_vertical-align-center slds-has-flexi-truncate slds-align_absolute-center slds-float_left">
+                        <div class="slds-p-right_x-small">
+                            <lightning-input type="date"
+                                             name="date"
+                                             label=" "
+                                             variant="label-hidden"
+                                             value={_selectedDate}
+                                             onchange={handelDateChange}></lightning-input>
+                        </div>
+                        <button class="slds-button slds-button_icon slds-button_icon-border-filled"
+                                aria-pressed="true"
+                                tabindex="-1"
+                                title=""
+                                onclick={previous}>
+                            <lightning-icon icon-name="utility:chevronleft"
+                                            size="xx-small"
+                                            alternative-text="chevronleft"
+                                            class="slds-button__icon slds-button__icon_small"
+                                            aria-hidden="true">
+                            </lightning-icon>
+                        </button>
+                        <button class="slds-button slds-button_icon slds-button_icon-border-filled"
+                                aria-hidden="true"
+                                tabindex="-1"
+                                title=""
+                                onclick={next}>
+                            <lightning-icon icon-name="utility:chevronright"
+                                            size="xx-small"
+                                            alternative-text="chevronright"
+                                            class="slds-button__icon slds-button__icon_small"
+                                            aria-hidden="true">
+                            </lightning-icon>
+                        </button>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1">
+                            <div class="slds-page-header__col-meta">
+                                <div class="slds-media__body slds-p-vertical_xx-small">
+                                    <span class="slds-text-heading_medium slds-truncate slds-p-left_x-small">
+                                        {currentMonthYear}
+                                    </span>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+             <template if:true={isSpinner}>
+                <lightning-spinner alternative-text="Loading" variant="brand" size="medium">
+                </lightning-spinner>
+            </template>
+            <div class="slds-page-header__col-actions slds-float_right">
+                <div class="slds-page-header__controls">
+                    <div class="slds-page-header__control">
+                        <ul class="slds-button-group-list">
+                            <li>
+                                <button class="slds-button slds-button_neutral"
+                                        onclick={viewChange}>Weekly</button>
+                            </li>
+                            <li>
+                                <button class="slds-button slds-button_neutral"
+                                        onclick={viewChange}>Bi-Weekly</button>
+                            </li>
+                            <li>
+                                <button class="slds-button slds-button_neutral"
+                                        onclick={viewChange}>Monthly</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

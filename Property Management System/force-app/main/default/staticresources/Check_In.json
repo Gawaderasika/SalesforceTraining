@@ -1,0 +1,296 @@
+{
+  "_id": "5e2041efd4b07500110c15ae",
+  "label": "Check In",
+  "name": "Check_In",
+  "objType": "layout",
+  "owner": "5e1ff0e444f12f001107a8a8",
+  "createdBy": "5e1ff0e444f12f001107a8a8",
+  "instance": "5e1ff19cf9cb010011693869",
+  "isDeleted": false,
+  "isTestRecord": false,
+  "createdOn": {
+    "$date": {
+      "$numberLong": "1579172335403"
+    }
+  },
+  "lastModifiedBy": "5e1ff0e444f12f001107a8a8",
+  "lastModifiedOn": {
+    "$date": {
+      "$numberLong": "1579175257707"
+    }
+  },
+  "actions": [
+    {
+      "workProcess": "Save",
+      "name": "Save",
+      "label": "Save",
+      "type": "workProcess",
+      "_id": "5e204d59d4b07500110c15bb"
+    },
+    {
+      "name": "Cancel",
+      "label": "Cancel",
+      "type": "popModal",
+      "_id": "5e204d59d4b07500110c15bc"
+    },
+    {
+      "workProcess": "closeModal",
+      "name": "closeModal",
+      "label": "closeModal",
+      "type": "workProcess",
+      "_id": "5e204d59d4b07500110c15bd"
+    }
+  ],
+  "layout": {
+    "footerView": {
+      "childs": [
+        {
+          "id": "footerView-xj2a",
+          "type": "button",
+          "label": "Cancel",
+          "translations": {},
+          "childs": [],
+          "disabled": false,
+          "validation": [],
+          "visibility": {
+            "criteria": {
+              "conditions": [{}],
+              "evaluationCriteria": "and"
+            }
+          },
+          "onclick": {
+            "action": "Cancel",
+            "type": "popModal"
+          },
+          "model": "Assignments",
+          "modelType": "dataModel",
+          "_id": "5e204b84d4b07500110c15b0"
+        },
+        {
+          "id": "footerView-5atb",
+          "type": "button",
+          "label": "Check In",
+          "translations": {},
+          "childs": [],
+          "buttonType": "primary",
+          "disabled": false,
+          "validation": [],
+          "visibility": {
+            "criteria": {
+              "conditions": [{}],
+              "evaluationCriteria": "and"
+            }
+          },
+          "onclick": {
+            "action": "Save",
+            "type": "workProcess"
+          },
+          "model": "Assignments",
+          "modelType": "dataModel",
+          "_id": "5e204b84d4b07500110c15b1"
+        }
+      ]
+    },
+    "contentView": {
+      "childs": [
+        {
+          "id": "contentView-ance",
+          "type": "section",
+          "label": "Check In Details",
+          "translations": {},
+          "childs": [
+            {
+              "id": "contentView-ance-l3zn",
+              "type": "form",
+              "label": "new form",
+              "fields": [
+                {
+                  "model": "Assignments",
+                  "label": "Check In Date",
+                  "path": "epms__Check_In_Date__c",
+                  "name": "epms__Check_In_Date__c",
+                  "type": "date",
+                  "id": "contentView-ance-l3zn-vlqf",
+                  "required": true,
+                  "hideLabel": false,
+                  "disabled": false,
+                  "readOnly": true,
+                  "validation": [],
+                  "visibility": {
+                    "criteria": {
+                      "conditions": [{}],
+                      "evaluationCriteria": "and"
+                    }
+                  },
+                  "onload": {},
+                  "onchange": {},
+                  "onblur": {},
+                  "onfocus": {},
+                  "modelType": "dataModel",
+                  "_id": "5e204b84d4b07500110c15b4"
+                },
+                {
+                  "model": "Assignments",
+                  "label": "Check Out Date",
+                  "path": "epms__Check_Out_Date__c",
+                  "name": "epms__Check_Out_Date__c",
+                  "type": "date",
+                  "id": "contentView-ance-l3zn-1udm",
+                  "required": true,
+                  "hideLabel": false,
+                  "disabled": false,
+                  "readOnly": true,
+                  "validation": [],
+                  "visibility": {
+                    "criteria": {
+                      "conditions": [{}],
+                      "evaluationCriteria": "and"
+                    }
+                  },
+                  "onload": {},
+                  "onchange": {},
+                  "onblur": {},
+                  "onfocus": {},
+                  "modelType": "dataModel",
+                  "_id": "5e204b84d4b07500110c15b5"
+                },
+                {
+                  "model": "Assignments",
+                  "label": "Unit Type",
+                  "path": "epms__Unit_Type__c",
+                  "name": "epms__Unit_Type__c",
+                  "type": "reference",
+                  "id": "contentView-ance-l3zn-zk5t",
+                  "required": true,
+                  "hideLabel": false,
+                  "disabled": true,
+                  "readOnly": false,
+                  "validation": [],
+                  "visibility": {
+                    "criteria": {
+                      "conditions": [{}],
+                      "evaluationCriteria": "and"
+                    }
+                  },
+                  "onload": {},
+                  "onchange": {},
+                  "onblur": {},
+                  "onfocus": {},
+                  "modelType": "dataModel",
+                  "_id": "5e204b84d4b07500110c15b6"
+                },
+                {
+                  "model": "Assignments",
+                  "label": "Unit",
+                  "path": "epms__Unit__c",
+                  "name": "epms__Unit__c",
+                  "type": "reference",
+                  "reference": "Assignments",
+                  "referenceField": "epms__Unit_Type__c",
+                  "id": "contentView-ance-l3zn-wuqu",
+                  "required": false,
+                  "hideLabel": false,
+                  "disabled": false,
+                  "readOnly": false,
+                  "validation": [],
+                  "visibility": {
+                    "criteria": {
+                      "conditions": [
+                        {
+                          "source": "model.Assignments.epms__Unit__c",
+                          "operator": "not equals",
+                          "destination": "static. ",
+                          "_id": "5e204b84d4b07500110c15b8"
+                        }
+                      ],
+                      "evaluationCriteria": "and"
+                    },
+                    "visibilityAction": " "
+                  },
+                  "onload": {},
+                  "onchange": {},
+                  "onblur": {},
+                  "onfocus": {},
+                  "modelType": "dataModel",
+                  "_id": "5e204b84d4b07500110c15b7"
+                }
+              ],
+              "model": "Assignments",
+              "isVisibility": true,
+              "largeSize": {
+                "$numberInt": "6"
+              },
+              "validation": [],
+              "visibility": {
+                "criteria": {
+                  "conditions": [{}],
+                  "evaluationCriteria": "and"
+                }
+              },
+              "onload": {},
+              "modelType": "dataModel",
+              "_id": "5e204b84d4b07500110c15b3"
+            }
+          ],
+          "validation": [],
+          "visibility": {
+            "criteria": {
+              "conditions": [{}],
+              "evaluationCriteria": "and"
+            }
+          },
+          "headeraction": [],
+          "model": "Assignments",
+          "modelType": "dataModel",
+          "_id": "5e204b84d4b07500110c15b2"
+        }
+      ]
+    },
+    "type": "modal",
+    "styles": ""
+  },
+  "models": ["Assignments"],
+  "tags": [],
+  "validationRules": [],
+  "workProcesses": [
+    {
+      "name": "Save",
+      "label": "Save",
+      "actions": [
+        {
+          "type": "save",
+          "model": "Assignments",
+          "_id": "5e204d59d4b07500110c15bf"
+        }
+      ],
+      "onSuccess": {
+        "type": "workProcess",
+        "workProcess": "closeModal"
+      },
+      "onError": {
+        "type": "errorMessage",
+        "message": "Error while saving record"
+      },
+      "_id": "5e204d59d4b07500110c15be"
+    },
+    {
+      "name": "closeModal",
+      "label": "closeModal",
+      "actions": [
+        {
+          "type": "successMessage",
+          "message": "Checked-In successfully",
+          "_id": "5e204d59d4b07500110c15c1"
+        }
+      ],
+      "onSuccess": {
+        "type": "popModal"
+      },
+      "onError": {
+        "type": "errorMessage",
+        "message": "Error while saving record"
+      },
+      "_id": "5e204d59d4b07500110c15c0"
+    }
+  ]
+}

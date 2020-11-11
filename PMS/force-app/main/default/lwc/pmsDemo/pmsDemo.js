@@ -46,7 +46,7 @@ export default class pmsDemo extends NavigationMixin(LightningElement) {
     @track lookupPropertyData = [];
     @track selectedRecord;
     @track showLabel;
-    @track showDefault = true;
+    @track showDefault = false;
     @track selectedRecordName = '';
     @track label;
     @track isRequired;
@@ -120,7 +120,7 @@ export default class pmsDemo extends NavigationMixin(LightningElement) {
     @track tableAction;
     @track records;
     @track showBokingTable = false;
-    @track showLookup = false;
+    @track showLookup = true;
 
     connectedCallback() {
         this.getNamespace();

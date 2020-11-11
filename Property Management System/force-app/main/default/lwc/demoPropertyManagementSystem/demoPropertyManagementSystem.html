@@ -1,0 +1,33 @@
+<template>
+    <!--change - 2 <div onclick={closeOpenedMenu}> -->
+    <div>
+    <!--This is the header section on PMS-->
+    <c-demo-page-header>
+        <div class="slds-text-color_error slds-align_absolute-center slds-m-right--x-small" style="margin-top: 22px;">
+            <span if:true={showValidPropertyError} >{propertyNotExistError}</span>
+            <span if:true={propertySelectionRequest} >{propertySelectMessage}</span>
+        </div>
+       <c-demo-lookup if:true={showLookup}  label={label} show-label={showLabel}  placeholder={placeholder} id="lookupWrapperId"
+            debounce-delay={debounceDelay} minimum-character-to-search={minimumCharacterToSearch} selected-record-name={selectedRecordName}
+            onpropertysearch={handleSearch} onclick={handleSearchOnClick} dropdown-height={dropdownHeight} lookup-data={lookupPropertyData}
+            object-api-name={objectApiName} field-api-name={fieldApiName} record-limit={recordLimit}
+            onselectionchange={handleSelectionChange} is-disabled={disabled} is-required={required}
+            filter-condition={filterCondition} create-record={createRecord} onsearchvalue={handleSearchvalue}>
+        </c-demo-lookup>
+
+        <div class="slds-align-bottom slds-m-left--xx-small">
+            <lightning-button-icon icon-name="utility:refresh" disabled={disabledCondition}  alternative-text="Refresh" onclick={handlerefresh}></lightning-button-icon>
+         </div>
+        <div class="slds-align-bottom slds-m-left--xx-small">
+            <lightning-button-icon icon-name="utility:help"  alternative-text="Help" onclick={handleHelp}></lightning-button-icon>    
+        </div>
+            
+    </c-demo-page-header>
+
+    <!--This is used to render booking grid -->
+    <c-demo-booking-grid if:true={showGrid} is-spinner={isSpinner}  booking-entities={bookingEntities} booking-data={bookingData} service-interruption-data={serviceInterruptionData}
+        onexistingbookingclicked={handleExistingBookingClicked} onunitclicked={handleMarkDirty} onexistinginterruptionclicked={handleExistingInterruptionClicked} onselectioncomplete={handleSelectionComplete} onentitybookingclicked={handleEntitybookingclicked}>
+    </c-demo-booking-grid>
+
+</div> 
+</template>

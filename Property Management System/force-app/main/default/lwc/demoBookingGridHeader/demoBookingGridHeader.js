@@ -44,7 +44,8 @@ export default class DemoBookingGridHeader extends LightningElement {
         this.dispatchEvent(selectedEvent);
     }
 
-    previous() {
+    // ***** previous
+    prevDate() {
         switch (this.view) {
             case "WEEKLY":
                 this.selectedDate = new Date(
@@ -71,7 +72,8 @@ export default class DemoBookingGridHeader extends LightningElement {
         }
 
     }
-    next() {
+    // ***** next
+    nxtDate() {
         switch (this.view) {
             case "WEEKLY":
                 this.selectedDate = new Date(
